@@ -24,9 +24,9 @@ X500 with the legacyExchangeDN of the source mail enabled object.<br>
 <br> 
 It will also add the X500 with the legacyExchangeDN of the target mail enabled object on the source mailbox enabled object. <br> 
 <br> 
-Running the above in the target Exchange Organization against all mailbox enabled source objects will prepare the target Exchange Organization, including GAL (Global Address List) Synchronization, for migration.<br> 
+Running the above in the target ExchOrg (Exchange Organization) against all mailbox enabled source objects will prepare the target ExchOrg, including GAL (Global Address List) Synchronization, for migration.<br> 
 <br> 
-Running New-MoveRequest in the EMS (Exchange Management Shell) against a mailbox in the target Exchange Organization will migrate the mailbox and convert the source type to mail user. New-MoveRequest will also perform other migration tasks, such as full access permissions on the target mailbox.<br> 
+Running New-MoveRequest in the EMS (Exchange Management Shell) against a mailbox in the target ExchOrg will migrate the mailbox and convert the source type to mail user. New-MoveRequest will also perform other migration tasks, such as full access permissions on the target mailbox.<br> 
 <br> 
 For full details on Prepare-MoveRequest please refer to Microsoft online documentation.<br> 
 <br> 
@@ -52,9 +52,9 @@ Cross-forest two way Active Directory trust.<br>
 Two way CA (Certificate Authority) trust.<br> 
 Two way internal network connectivity.<br> 
 Two way DNS name resolution.<br> 
-Fully authoritative accepted domain using the format mail.onDomain (Domain is the AD domain FQDN for SMTP routing from one Exchange Org to the other. Must be done for both Exchange Organizations, e.g. mail.ondomain1.net in Exchange Org 1 and mail.ondomain2.net in Exchange Org 2. The format will be used in the targetaddress attributes of mail enabled objects when forwarding to the opposing Exchange Organization).<br> 
+Fully authoritative accepted domain using the format mail.onDomain (Domain is the AD domain FQDN for SMTP routing from one Exchange Org to the other. Must be done for both ExchOrgs, e.g. mail.ondomain1.net in Exchange Org 1 and mail.ondomain2.net in Exchange Org 2. The format will be used in the targetaddress attributes of mail enabled objects when forwarding to the opposing ExchOrg).<br> 
 Cross-forest availability.<br> 
-Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct Exchange Organization hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).<br>
+Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct ExchOrg hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).<br>
 MRSProxy settings must be enabled in order to cross-forest migrate mailboxes.<br>
 <br> 
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
@@ -72,9 +72,9 @@ Please understand the concept of the STPS (Source Target Primary Secondary) Mode
 Source - This refers to where mail enabled enabled objects will be migrated from.<br>
 Target - This refers to where mail enabled enabled objects will be migrated to.<br>
 Primary - This is the mailbox enabled object.<br>
-Secondary - This is the mail enabled object in the opposite Exchange Organization that is prepared / sychronized with the mailbox.<br>
+Secondary - This is the mail enabled object in the opposite ExchOrg that is prepared / sychronized with the mailbox.<br>
 <br>
-The mailbox is considered to be authoritative for attributes, permissions, and settings. Before a migration, the primary is located in the source and the secondary is located in the target. After a mailbox has been migrated to the target Exchange Organization, then the primary is located in the target and the secondary is located in the source.<br>
+The mailbox is considered to be authoritative for attributes, permissions, and settings. Before a migration, the primary is located in the source and the secondary is located in the target. After a mailbox has been migrated to the target ExchOrg, then the primary is located in the target and the secondary is located in the source.<br>
 <br>
 Synchronization will always flow from primary to secondary, however a mailbox can only be migrated from source to target.<br>
 <br>
