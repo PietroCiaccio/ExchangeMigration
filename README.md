@@ -24,9 +24,9 @@ X500 with the legacyExchangeDN of the source mail enabled object.<br>
 <br> 
 It will also add the X500 with the legacyExchangeDN of the target mail enabled object on the source mailbox enabled object. <br> 
 <br> 
-Running the above in the target Exchange Organization against all mailbox enabled source objects will prepare the target Exchange Organisation, including GAL (Global Address List) Synchronisation, for migration.<br> 
+Running the above in the target Exchange Organization against all mailbox enabled source objects will prepare the target Exchange Organization, including GAL (Global Address List) Synchronization, for migration.<br> 
 <br> 
-Running New-MoveRequest in the EMS (Exchange Management Shell) against a mailbox in the target Exchange Organization will migrate the mailbox and convert the source type to mail user. New-MoveRequest will also perform others migration tasks, such as full access permissions on the target mailbox.<br> 
+Running New-MoveRequest in the EMS (Exchange Management Shell) against a mailbox in the target Exchange Organization will migrate the mailbox and convert the source type to mail user. New-MoveRequest will also perform other migration tasks, such as full access permissions on the target mailbox.<br> 
 <br> 
 For full details on Prepare-MoveRequest please refer to Microsoft online documentation.<br> 
 <br> 
@@ -54,10 +54,11 @@ Two way internal network connectivity.<br>
 Two way DNS name resolution.<br> 
 Accepted domain using the format mail.onADDomain, e.g. mail.onCompany.net (ADDomain is the FQDN of the domain for the mail enabled object).<br> 
 Cross-forest availability.<br> 
-Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct Exchange Organization hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).<br> 
+Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct Exchange Organization hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).<br>
+MRSProxy settings must be enabled in order to cross-forest migrate mailboxes.<br>
 <br> 
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
-<br>
+
 # Comments From Author
 This code is being shared as is to help others with their Exchange migration activities.<br>
 Please make sure you test in an isolated test environment before using in production.<br>
