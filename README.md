@@ -60,7 +60,7 @@ MRSProxy settings must be enabled in order to cross-forest migrate mailboxes.<br
 <br> 
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
 
-# Comments From Author
+# Comments From The Author
 This code is being shared as is to help others with their Exchange migration activities.<br>
 Please make sure you test in an isolated test environment before using in production.<br>
 If you choose to use any code shared in this repository then you are responsible for its execution and outcome.<br>
