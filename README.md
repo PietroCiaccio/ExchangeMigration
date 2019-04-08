@@ -54,11 +54,30 @@ Cross-forest availability.<br>
 Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct Exchange Organization hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).<br> 
 <br> 
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
-
+<br>
 # Comments from author
 This code is being shared as is to help others with their Exchange migration activities.<br>
 Please make sure you test in an isolated test environment before using in production.<br>
 If you choose to use any code shared in this repository then you are responsible for its execution and outcome.<br>
+
+# The STPS Model
+Please understand the concept of the STPS (Source Target Primary Secondary) Model used by EM.<br>
+<br>
+<b>For mailbox enabled objects -</b><br>
+Source - This refers to where mail enabled enabled objects will be migrated from.<br>
+Target - This refers to where mail enabled enabled objects will be migrated to.<br>
+Primary - This is the mailbox enabled object.<br>
+Secondary - This is the mail enabled object in the opposite Exchange Organization that is prepared / sychronized with the mailbox.<br>
+<br>
+The mailbox is considered to be authoritative for attributes, permissions, and settings. Before a migration, the primary is located in the source and the secondary is located in the target. After a mailbox has been migrated to the target Exchange Organization, then the primary is located in the target and the secondary is located in the source.<br>
+<br>
+Synchronization will always flow from primary to secondary, however a mailbox can only be migrated from source to target.<br>
+<br>
+The source target model supports the direction of the migration.<br>
+The primary secondary model supports the synchronization of changes that can occur before and after the migration, e.g. user first or last name changes, changes to SMTP addresses, permissions etc.<br>
+<br>
+<b>For mail enabled objects -</b><br>
+This is the same as for mailbox enabled object except that the source is always the primary and the target is always the secondary.<br>
 
 # Version 0
 <b>Mailboxes</b>
