@@ -55,7 +55,7 @@ Cross-forest SMTP routing domains and internal connectors using the format mail.
 <br> 
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
 <br>
-# Comments from author
+# Comments From Author
 This code is being shared as is to help others with their Exchange migration activities.<br>
 Please make sure you test in an isolated test environment before using in production.<br>
 If you choose to use any code shared in this repository then you are responsible for its execution and outcome.<br>
@@ -63,7 +63,8 @@ If you choose to use any code shared in this repository then you are responsible
 # The STPS Model
 Please understand the concept of the STPS (Source Target Primary Secondary) Model used by EM.<br>
 <br>
-<b>For mailbox enabled objects -</b><br>
+<b>For mailbox enabled objects</b><br>
+<br>
 Source - This refers to where mail enabled enabled objects will be migrated from.<br>
 Target - This refers to where mail enabled enabled objects will be migrated to.<br>
 Primary - This is the mailbox enabled object.<br>
@@ -76,7 +77,8 @@ Synchronization will always flow from primary to secondary, however a mailbox ca
 The source target model supports the direction of the migration.<br>
 The primary secondary model supports the synchronization of changes that can occur before and after the migration, e.g. user first or last name changes, changes to SMTP addresses, permissions etc.<br>
 <br>
-<b>For mail enabled objects -</b><br>
+<b>For mail enabled objects</b><br>
+<br>
 This is the same as for mailbox enabled object except that the source is always the primary and the target is always the secondary.<br>
 
 # Version 0
