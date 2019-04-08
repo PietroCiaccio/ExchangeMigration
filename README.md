@@ -18,6 +18,7 @@ userAccountControlv
 userPrincipalName<br> 
 <br> 
 It will then execute the Update-Recipient cmdlet to prepare the proxyAddresses attribute with the following and mail enable the target object -<br> 
+<br>
 Source SMTP addresses<br> 
 X500 with the legacyExchangeDN of the source mail enabled object.<br> 
 <br> 
