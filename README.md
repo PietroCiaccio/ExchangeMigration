@@ -33,14 +33,17 @@ The above does a lot of work for you but doesn't include many attributes and set
 At the time of writing this document EM was created to meet the migration requirements of a project. The initial release may therefore not include everything you may wish to migrate. Updates and changes will be detailed in future release notes (below titled 'Version n').<br> 
 <br> 
 <b>In Scope</b><br>
+<br>
 Mailbox enabled objects.<br> 
 Mail enabled objects.<br> 
 <br> 
 <b>Out of Scope</b><br>
+<br>
 Organizational migration preparation tasks.<br>
 Object creation.<br> 
 <br> 
-<b>Pre-requisites</b><br>
+<b>Pre-Requisites</b><br>
+<br>
 The following needs to be configured before using EM -<br>
 Cross-forest two way Active Directory trust.<br> 
 Two way CA (Certificate Authority) trust.<br> 
