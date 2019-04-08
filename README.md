@@ -9,6 +9,7 @@ Microsoft Exchange Server 2016 Cumulative Update 11 on Microsoft Windows Server 
 
 # Background
 Microsoft provides the Prepare-MoveRequest.ps1 powershell script. This will prepare the following attributes of a target AD (Active Directory) object -<br> 
+<br> 
 msExchMailboxGUID<br> 
 msExchArchiveGUID<br> 
 msExchArchiveName<br> 
