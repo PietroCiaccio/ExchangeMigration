@@ -5,7 +5,7 @@ The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Excha
 Powershell Version 5.<br>
 Microsoft Exchange Server 2010 SP3 Update Rollup 22 on Microsoft Windows Server 2008 R2.<br>
 Microsoft Exchange Server 2016 Cumulative Update 11 on Microsoft Windows Server 2016.<br>
-<br>
+
 # Background
 Microsoft provides Prepare-MoveRequest.ps1. This will prepare the following attributes of a target AD (Active Directory) object -<br> 
 msExchMailboxGUID<br> 
@@ -51,12 +51,12 @@ Cross-forest availability.<br>
 Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct Exchange Organization hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).<br> 
 <br> 
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
-<br> 
+
 # Comments from author
 This code is being shared as is to help others with their Exchange migration activities.<br>
 Please make sure you test in an isolated test environment before using in production.<br>
 If you choose to use any code shared in this repository then you are responsible for its execution and outcome.<br>
-<br> 
+
 # Version 0
 <b>Mailboxes</b>
 
