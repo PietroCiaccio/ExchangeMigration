@@ -87,6 +87,5 @@ The primary secondary model supports the synchronization of changes that can occ
 This is the same as for mailbox enabled objecst except that the source is always the primary and the target is always the secondary.<br>
 
 # Version 0
-<b>Mailboxes</b>
+To be completed <br>
 
-USAGE:
