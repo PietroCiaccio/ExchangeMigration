@@ -52,7 +52,7 @@ The following needs to be configured before using EM -
 - Two way CA (Certificate Authority) trust.<br> 
 - Two way internal network connectivity.<br> 
 - Two way DNS name resolution.<br> 
-- Fully authoritative accepted domain using the format mail.onDomain (Domain is the AD domain FQDN for SMTP routing from one Exchange Org to the other. Must be done for both ExchOrgs, e.g. mail.ondomain1.net in Exchange Org 1 and mail.ondomain2.net in Exchange Org 2. The format will be used in the targetaddress attributes of mail enabled objects when forwarding to the opposing ExchOrg).
+- Fully authoritative accepted domain using the format mail.on*Domain* (Domain is the AD domain FQDN for SMTP routing from one Exchange Org to the other. Must be done for both ExchOrgs, e.g. mail.on*domain1.net* in Exchange Org 1 and mail.on*domain2.net* in Exchange Org 2. The format will be used in the targetaddress attributes of mail enabled objects when forwarding to the opposing ExchOrg).
 - Cross-forest availability.
 - Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct ExchOrg hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).
 - MRSProxy settings must be enabled in order to cross-forest migrate mailboxes.
