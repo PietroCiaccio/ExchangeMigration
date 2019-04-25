@@ -37,8 +37,43 @@ On the first run you will be presented with the following -
 > https://github.com/PietroCiaccio/ExchangeMigration  
 > 25/04/2019 16:49:33  
 >  
-> Configuration not detected. You can create a configuration file using 'Write-EMConfiguration' [WARN]
+> Configuration not detected. Calling 'Write-EMConfiguration' [WARN]  
+>  
+> cmdlet Write-EMConfiguration at command pipeline position 1  
+> Supply values for the following parameters:  
+> SourceDomain:  
+
+At this stage the configuration file (ExchangeMigration.config) has never been created. The configuration file stores the following securely -
+
+- SourceUsername
+- SourcePassword
+- SourceDomain
+- SourceEndPoint: This is the Exchange server you wish to use for actions in the source Exchange Organization.
+- TargetUsername
+- TargetPassword
+- TargetDomain
+- TargetEndPoint: This is the Exchange server you wish to use for actions in the target Exchange Organization.
+- LogPath: Defaults to C:\Temp\EM if not set
+- SourceGALSyncOU: This is where GALSync objects are created in the source domain.
+- TargetGALSyncOU: This is where GALSync objects are created in the target domain.
+
+It is required to create a configuration file so you have a baseline for your tasks.
+
+After you have created the configuration file you will see the following when importing the EM powershell module.
+
+> EM (ExchangeMigration) Powershell Module  
+> https://github.com/PietroCiaccio/ExchangeMigration  
+> 25/04/2019 17:22:19  
+>   
+> Configuration detected. [OK]  
+> Configuration successfully enabled. [OK]  
+>  
+> Use 'Read-EMConfiguration' to review.  
+> To create a new configuration use the 'Write-EMConfiguration' cmdlet.  
+> To test configuration data settings use 'Test-EMConfiguraion'  
 
 ### Write-EMConfiguration
+
+This cmdlet is used to create the configuration file. This will overwrite any configuration file that exists.
 
 Write-EMConfiguration [-SourceDomain] <string> [-SourceEndPoint] <string> [-SourceGALSyncOU] <string> [-TargetDomain] <string> [-TargetEndPoint] <string> [-TargetGALSyncOU] <string> [[-LogPath] <string>]
