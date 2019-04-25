@@ -64,7 +64,7 @@ EM should only be used to mail enable objects, for GAL synchronization, and to m
 
 ### Comments From The Author
 
-- This code is being shared as is to help others with their Exchange migration activities.
+- This code is being shared "*as is*" to help others with their Exchange migration activities.
 - Please make sure you test in an isolated test environment before using in production.
 - ***If you choose to use any code shared in this repository then you are responsible for its execution and outcome.***
 
