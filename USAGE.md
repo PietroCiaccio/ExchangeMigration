@@ -25,4 +25,20 @@ If you explore the cmdlets available with the EM Powershell Module you will see 
 - Clear-EMLogs
 - Start-EMLogsArchive
 
+### Importing the Module
+
+Run the following -
+
+ - import-module .\ExchangeMigration.psm1
+
+On the first run you will be presented with the following -
+
+*EM (ExchangeMigration) Powershell Module
+*https://github.com/PietroCiaccio/ExchangeMigration
+*25/04/2019 16:45:40
+
+*Configuration not detected. You can create a configuration file using 'Write-EMConfiguration' [WARN]
+
 ### Write-EMConfiguration
+
+Write-EMConfiguration [-SourceDomain] <string> [-SourceEndPoint] <string> [-SourceGALSyncOU] <string> [-TargetDomain] <string> [-TargetEndPoint] <string> [-TargetGALSyncOU] <string> [[-LogPath] <string>]
