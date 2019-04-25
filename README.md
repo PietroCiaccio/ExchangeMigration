@@ -37,7 +37,7 @@ At the time of writing this document EM was created to meet the migration requir
 **In Scope**
 
 - Mailbox enabled objects.
-- ail enabled objects.
+- Mail enabled objects.
 
 **Out of Scope**
 
@@ -59,12 +59,12 @@ The following needs to be configured before using EM -
  
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
 
-# Comments From The Author
-This code is being shared as is to help others with their Exchange migration activities.<br>
-Please make sure you test in an isolated test environment before using in production.<br>
-If you choose to use any code shared in this repository then you are responsible for its execution and outcome.<br>
+### Comments From The Author
+- This code is being shared as is to help others with their Exchange migration activities.
+- Please make sure you test in an isolated test environment before using in production.
+- ***If you choose to use any code shared in this repository then you are responsible for its execution and outcome.***
 
-# The STPS Model
+### The STPS Model
 Please understand the concept of the STPS (Source Target Primary Secondary) Model used by EM.<br>
 <br>
 <b>For mailbox enabled objects</b><br>
