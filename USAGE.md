@@ -32,12 +32,12 @@ Run the following -
  - import-module .\ExchangeMigration.psm1
 
 On the first run you will be presented with the following -
-
-*EM (ExchangeMigration) Powershell Module
-*https://github.com/PietroCiaccio/ExchangeMigration
-*25/04/2019 16:45:40
-
-*Configuration not detected. You can create a configuration file using 'Write-EMConfiguration' [WARN]
+<i>
+> EM (ExchangeMigration) Powershell Module
+> https://github.com/PietroCiaccio/ExchangeMigration
+> 25/04/2019 16:49:33
+>
+> Configuration not detected. You can create a configuration file using 'Write-EMConfiguration' [WARN] </i>
 
 ### Write-EMConfiguration
 
