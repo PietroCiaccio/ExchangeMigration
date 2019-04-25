@@ -54,8 +54,8 @@ At this stage the configuration file (ExchangeMigration.config) has never been c
 - TargetDomain
 - TargetEndPoint: This is the Exchange server you wish to use for actions in the target Exchange Organization.
 - LogPath: Defaults to C:\Temp\EM if not set
-- SourceGALSyncOU: This is where GALSync objects are created in the source domain.
-- TargetGALSyncOU: This is where GALSync objects are created in the target domain.
+- SourceGALSyncOU: This is the DN of the OU where GALSync objects are created in the source domain.
+- TargetGALSyncOU: This is the DN of the OU where GALSync objects are created in the target domain.
 
 It is required to create a configuration file so you have a baseline for your tasks.
 
