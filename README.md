@@ -1,12 +1,15 @@
 ## ExchangeMigration
+
 The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Exchange cross-forest migration.<br> 
 
 **Developed using the following**
+
 - Powershell Version 5.
 - Microsoft Exchange Server 2010 SP3 Update Rollup 22 on Microsoft Windows Server 2008 R2.
 - Microsoft Exchange Server 2016 Cumulative Update 11 on Microsoft Windows Server 2016.
 
 ### Background
+
 At the time of writing, Microsoft provides the Prepare-MoveRequest.ps1 powershell script. This will prepare the following attributes of a target AD (Active Directory) object - 
 
 - msExchMailboxGUID 
@@ -60,31 +63,31 @@ The following needs to be configured before using EM -
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
 
 ### Comments From The Author
+
 - This code is being shared as is to help others with their Exchange migration activities.
 - Please make sure you test in an isolated test environment before using in production.
 - ***If you choose to use any code shared in this repository then you are responsible for its execution and outcome.***
 
 ### The STPS Model
-Please understand the concept of the STPS (Source Target Primary Secondary) Model used by EM.<br>
-<br>
-<b>For mailbox enabled objects</b><br>
-<br>
-Source - This refers to where mail enabled enabled objects will be migrated from.<br>
-Target - This refers to where mail enabled enabled objects will be migrated to.<br>
-Primary - This is the mailbox enabled object.<br>
-Secondary - This is the mail enabled object in the opposite ExchOrg that is prepared / sychronized with the mailbox.<br>
-<br>
-The mailbox is considered to be authoritative for attributes, permissions, and settings. Before a migration, the primary is located in the source and the secondary is located in the target. After a mailbox has been migrated to the target ExchOrg, then the primary is located in the target and the secondary is located in the source.<br>
-<br>
-Synchronization will always flow from primary to secondary, however a mailbox can only be migrated from source to target.<br>
-<br>
-The source target model supports the direction of the migration.<br>
-The primary secondary model supports the synchronization of changes that can occur before and after the migration, e.g. user first or last name changes, changes to SMTP addresses, permissions etc.<br>
-<br>
-<b>For mail enabled objects</b><br>
-<br>
-This is the same as for mailbox enabled objecst except that the source is always the primary and the target is always the secondary.<br>
 
-# Version 0
-To be completed <br>
+Please understand the concept of the STPS (Source Target Primary Secondary) Model used by EM.
+
+**For mailbox enabled objects**
+
+- Source - This refers to where mail enabled enabled objects will be migrated from.
+- Target - This refers to where mail enabled enabled objects will be migrated to.
+- Primary - This is the mailbox enabled object.
+- Secondary - This is the mail enabled object in the opposite ExchOrg that is prepared / sychronized with the mailbox.
+
+The mailbox is considered to be authoritative for attributes, permissions, and settings. Before a migration, the primary is located in the source and the secondary is located in the target. After a mailbox has been migrated to the target ExchOrg, then the primary is located in the target and the secondary is located in the source.
+
+- Synchronization will always flow from primary to secondary, however a mailbox can only be migrated from source to target.
+- The source target model supports the direction of the migration.
+- The primary secondary model supports the synchronization of changes that can occur before and after the migration, e.g. user first or last name changes, changes to SMTP addresses, permissions etc.<br>
+
+**For mail enabled objects**
+
+This is the same as for mailbox enabled objecst except that the source is always the primary and the target is always the secondary.
+
+
 
