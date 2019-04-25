@@ -87,7 +87,21 @@ The mailbox is considered to be authoritative for attributes, permissions, and s
 
 **For mail enabled objects**
 
-This is the same as for mailbox enabled objecst except that the source is always the primary and the target is always the secondary.
+This is the same as for mailbox enabled objects except that the source is always the primary and the target is always the secondary.
 
+### Other Concepts
 
+**Activities**
 
+EM performs two activities. These are as follows -
+
+- Migrate
+- GALSync
+
+**Migrate**
+
+This is where EM will migrate mail data and settings from the source to the target.
+
+**GALSync**
+
+This is where EM will create an object in the target ExchOrg but it is only created to support coexistence between the two Exchange Organizations. The settings migrated will be limited and only used for GAL synchronization purposes. Objects configured this way are not intended to be fully migrated.
