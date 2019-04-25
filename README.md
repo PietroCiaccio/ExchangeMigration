@@ -39,13 +39,14 @@ At the time of writing this document EM was created to meet the migration requir
 
 **In Scope**
 
-- Mailbox enabled objects.
-- Mail enabled objects.
+- Mailboxes.
+- Distribution Groups.
 
 **Out of Scope**
 
 - Organizational migration preparation tasks.
 - Object creation.
+- Contacts (support to be added in the future)
 
 **Pre-Requisites**
 
@@ -59,6 +60,7 @@ The following needs to be configured before using EM -
 - Cross-forest availability.
 - Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct ExchOrg hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).
 - MRSProxy settings must be enabled in order to cross-forest migrate mailboxes.
+- Policies, such as retention policies and retention tags, must be migrated in advance in order for them to be correctly applied in the target ExchOrg mail enabled objects.
  
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
 
