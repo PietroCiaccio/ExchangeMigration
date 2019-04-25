@@ -7,18 +7,18 @@ The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Excha
 - Microsoft Exchange Server 2016 Cumulative Update 11 on Microsoft Windows Server 2016.
 
 # Background
-At the time of writing, Microsoft provides the Prepare-MoveRequest.ps1 powershell script. This will prepare the following attributes of a target AD (Active Directory) object -<br> 
-<br> 
-msExchMailboxGUID<br> 
-msExchArchiveGUID<br> 
-msExchArchiveName<br> 
-objectSid / masterAccountSidv
-sAMAccountName<br> 
-userAccountControl<br>
-userPrincipalName<br> 
-<br> 
-It will then execute the Update-Recipient cmdlet to prepare the proxyAddresses attribute with the following and mail enable the target object -<br> 
-<br>
+At the time of writing, Microsoft provides the Prepare-MoveRequest.ps1 powershell script. This will prepare the following attributes of a target AD (Active Directory) object - 
+
+- msExchMailboxGUID 
+- msExchArchiveGUID 
+- msExchArchiveName
+- objectSid / masterAccountSid
+- sAMAccountName
+- userAccountControl
+- userPrincipalName
+
+It will then execute the Update-Recipient cmdlet to prepare the proxyAddresses attribute with the following and mail enable the target object -
+
 Source SMTP addresses<br> 
 X500 with the legacyExchangeDN of the source mail enabled object.<br> 
 <br> 
