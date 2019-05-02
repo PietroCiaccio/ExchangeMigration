@@ -416,6 +416,6 @@ At this point the Exchange Organizations are prepared for coexistence and migrat
 
  - Use either *Start-EMProcessMailbox* or *Start-EMProcessMailboxBatch* to migrate mailboxes.
  - For the best migration experience mailboxes that have relationships should be migrated together.
- - Start will smaller numbers and then increase until the migration has been completed.
+ - Start with smaller numbers and then increase until the migration has been completed.
  
 Once all mailboxes have been migrated you will need to perform Exchange Organizational level post migration tasks. This is out of scope of EM.
