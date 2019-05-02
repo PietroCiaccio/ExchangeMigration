@@ -355,6 +355,20 @@ The following command gets detailed information for a single mailbox -
 > 20190502145615789 02/05/2019 14:56:15 MIGUSER1 OK   Ready  
 > 20190502145615801 02/05/2019 14:56:15 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145445' ended  
 
+## Distribution Groups
 
+Distribution group are managed in the same way as mailboxes but with their associated cmdlets.
+
+## GALSync Activity
+
+If you choose GALSYNC as an option for the *activity* parameter for either mailboxes or distribution groups then the following actions will be performed -
+
+**Mailboxes**
+ - If the user object is missing from the target domain then one will be created in the GALSync OU defined in the EM configuration file.
+ - If the secondary object exists it will be moved to the GALSync OU if needed.
+ - The secondary object will be hidden from the GAL.
+ - The object will have a mailtip populated advising the sender that the recipient is external.
+ - Cross forest permissions and settings will be removed (if they exist).
+ 
 
 
