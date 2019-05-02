@@ -122,9 +122,9 @@ To migrate a single mailbox you would use the following cmdlet -
 
 Start-EMProcessMailbox [-Samaccountname] <string> [[-SourceCred] <pscredential>] [[-TargetCred] <pscredential>] [[-SourceDomain] <string>] [[-TargetDomain] <string>] [[-Activity] {Migrate | GALSync}] [[-Mode] {Prepare | LogOnly}] [[-MoveMailbox] {Yes | No | Suspend}] [[-SourceEndPoint] <string>] [[-TargetEndPoint] <string>] [[-Link] <bool>] [[-Separate] <bool>] [[-Wait] <bool>]  [<CommonParameters>]
  
- At a minimum you must specify the *samaccountname* of the source object to be migrated.
+At a minimum you must specify the *samaccountname* of the source object to be migrated.
  
- Example will provide a log only result of the mailbox in scope.
+The below example will provide a log only result of the mailbox in scope. Please note, the example has thrown an error because a user object in the target domain does not exist with the samaccountname of miguser1. The *migrate* activity requires a target user object to exist.
  
 > PS C:\> Start-EMProcessMailbox -Samaccountname miguser1  
 > 20190502104602563 MIGUSER1 MIGRATE mailbox  
