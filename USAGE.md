@@ -173,7 +173,7 @@ The below example is the same command as above however it has completed successf
 
 The below example takes things further. We are now instructing the mode to *prepare* rather than *logonly*. You can see a number of actions we taken on both the source and target objects. There were also some warnings where an action couldn't be completed because a target object did not exist yet. It did complete successfully however. 
 
-> PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare
+> PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare  
 > 20190502112256485 MIGUSER1 MIGRATE mailbox  
 > 20190502112256495 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: PREPARE; Mo...  
 > 20190502112302237 MIGUSER1 SourceType: UserMailbox; SourcePDC: ENDPOINT.DOMAINA.NET; TargetType: ; TargetPDC: MPR...  
