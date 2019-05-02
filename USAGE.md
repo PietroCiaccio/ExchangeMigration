@@ -254,7 +254,7 @@ The following command will create a move request in the target Exchange Organiza
 > 20190502115903139 MIGUSER1 Not waiting for move request to complete.  
 > 20190502115903146 MIGUSER1 Ready [OK]  
 
-The following command completes the migration. Note that this time the *wait* parameter has been set to TRUE. This means the cmdlet will wait for the mailbox to be migrated (up to 12 hours) and then will complete the post migration tasks. Also note that the *link* parameter has been set to TRUE. This will link the mailbox back to the source domain. This is useful if you need to migrate mailboxes before you can actually migrate the users to a new AD forest.
+The following command completes the migration. Note that this time the *wait* parameter has been set to TRUE. This means the cmdlet will wait for the mailbox to be migrated (up to 12 hours) and will then complete the post migration tasks. Also note that the *link* parameter has been set to TRUE. This will link the mailbox back to the source domain user object. This is useful if you need to migrate mailboxes before you can actually migrate the users to a new AD forest.
 
 
 
