@@ -357,7 +357,7 @@ If you have access to an SMTP relay you can instruct the batch cmdlets to email 
 
 ## Distribution Groups
 
-Distribution group are managed in the same way as mailboxes but with their associated cmdlets.
+Distribution groups are managed in the same way as mailboxes but with their associated cmdlets.
 
 **Start-EMProcessDistributionGroup** [-Samaccountname] <string> [[-SourceCred] <pscredential>] [[-TargetCred] <pscredential>] [[-SourceDomain] <string>] [[-TargetDomain] <string>] [[-Activity] {Migrate | GALSync}] [[-Mode] {Prepare | LogOnly}]  [-SourceEndPoint] <string>] [[-TargetEndPoint] <string>] [[-Separate] <bool>]  [<CommonParameters>]
  
