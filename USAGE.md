@@ -359,16 +359,47 @@ The following command gets detailed information for a single mailbox -
 
 Distribution group are managed in the same way as mailboxes but with their associated cmdlets.
 
+**Start-EMProcessDistributionGroup** [-Samaccountname] <string> [[-SourceCred] <pscredential>] [[-TargetCred] <pscredential>] [[-SourceDomain] <string>] [[-TargetDomain] <string>] [[-Activity] {Migrate | GALSync}] [[-Mode] {Prepare | LogOnly}]  [-SourceEndPoint] <string>] [[-TargetEndPoint] <string>] [[-Separate] <bool>]  [<CommonParameters>]
+ 
+**Start-EMProcessDistributionGroupBatch** [-Samaccountnames] <array> [[-SourceCred] <pscredential>] [[-TargetCred] <pscredential>] [[-SourceDomain] <string>] [[-TargetDomain] <string>] [[-Activity] {Migrate | GALSync}] [[-Mode] {Prepare | LogOnly}] [[-SourceEndPoint] <string>] [[-TargetEndPoint] <string>] [[-Separate] <bool>] [[-Threads] <int>] [[-ReportSMTP] <string>] [[-SMTPServer] <string>]  [<CommonParameters>]
+
 ## GALSync Activity
 
 If you choose GALSYNC as an option for the *activity* parameter for either mailboxes or distribution groups then the following actions will be performed -
 
 **Mailboxes**
+
  - If the user object is missing from the target domain then one will be created in the GALSync OU defined in the EM configuration file.
  - If the secondary object exists it will be moved to the GALSync OU if needed.
  - The secondary object will be hidden from the GAL.
  - The object will have a mailtip populated advising the sender that the recipient is external.
- - Cross forest permissions and settings will be removed (if they exist).
+ - Cross forest settings will be removed (if they exist).
+ - The user object will be disabled.
+ 
+ **Distribution Groups**
+ 
+  - If the group object is missing from the target domain then one will be created in the GALSync OU defined in the EM configuration file.
+ - If the secondary object exists it will be moved to the GALSync OU if needed.
+ - The secondary object will be hidden from the GAL.
+ - The object will have a mailtip populated advising the sender that the recipients are external.
+ - Cross forest settings and permissions will be removed (if they exist).
+ - Membership will be removed.
+ - Permissions to send to the distribution group will be removed.
+ 
+It should be noted that GALSync should only be used for objects you do not wish to fully migrate but are needed for the purposes of managing the coexistence experience.
+ 
+ ## Separation
+ 
+ This is an option with the mailbox cmdlets only. The *separate* parameter when set to TRUE will perform the following -
+ 
+  - The secondary object will be hidden from the GAL.
+  - The secondary object targetaddress attribute will be updated to use the primary SMTP address.
+  - The secondary user object will be disabled.
+  - Cross forest settings and permissions will be removed (if they exist).
+  
+ 
+  
+  
  
 
 
