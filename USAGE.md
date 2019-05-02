@@ -74,21 +74,21 @@ After you have created the configuration file you will see the following when im
 > To create a new configuration use the 'Write-EMConfiguration' cmdlet.  
 > To test configuration data settings use 'Test-EMConfiguraion'  
 
-### Write-EMConfiguration
+**Write-EMConfiguration**
 
 This cmdlet is used to create the configuration file. This will overwrite any configuration file that exists.
 
 Write-EMConfiguration [-SourceDomain] <string> [-SourceEndPoint] <string> [-SourceGALSyncOU] <string> [-TargetDomain] <string> [-TargetEndPoint] <string> [-TargetGALSyncOU] <string> [[-LogPath] <string>]
  
-### Read-EMConfiguration
+**Read-EMConfiguration**
 
 This cmdlet is used to read the configuration file.
 
-### Get-EMConfiguration
+**Get-EMConfiguration**
 
 This cmdlet is used to display the configuration that has been loaded for the module to use. This is slightly different to Read-EMConfiguration.
 
-### Test-EMConfiguration
+**Test-EMConfiguration**
 
 This cmdlet will test your configuration. An example result is below.
 
@@ -118,7 +118,7 @@ The module uses the following defaults unless overwritten by Write-EMConfigurati
 
 To migrate a single mailbox you would use the following cmdlet -
 
-### Start-EMProcessMailbox
+**Start-EMProcessMailbox**
 
 Start-EMProcessMailbox [-Samaccountname] <string> [[-SourceCred] <pscredential>] [[-TargetCred] <pscredential>] [[-SourceDomain] <string>] [[-TargetDomain] <string>] [[-Activity] {Migrate | GALSync}] [[-Mode] {Prepare | LogOnly}] [[-MoveMailbox] {Yes | No | Suspend}] [[-SourceEndPoint] <string>] [[-TargetEndPoint] <string>] [[-Link] <bool>] [[-Separate] <bool>] [[-Wait] <bool>]  [<CommonParameters>]
  
