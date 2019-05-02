@@ -238,6 +238,26 @@ The same command has been run again but this time it has been more successful be
 > 20190502115526012 MIGUSER1 'DOMAINB\miguser2' send-as added [OK]  
 > 20190502115526025 MIGUSER1 Ready [OK]  
 
+## Migrating Mailboxes
+
+***Make sure all objects are prepared before moving any mailboxes. The GAL needs to be prepared in both Exchange Organizations otherwise there may be coexistence and / or mail flow issues.***
+
+The following command will create a move request in the target Exchange Organization but will set it to not complete. This will pre-stage the mail data in the target up to 95%. This is useful because it means only a small amount of mail data will need to be synchronised at actual migration time.
+
+> PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare -MoveMailbox Suspend  
+> 20190502115843968 MIGUSER1 MIGRATE mailbox  
+> 20190502115843981 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: P...  
+> 20190502115848443 MIGUSER1 SourceType: UserMailbox; SourcePDC: ORMNDS001.DOMAINA.NET; TargetType: Remote...  
+> 20190502115848450 MIGUSER1 Primary: SOURCE  
+> 20190502115857083 MIGUSER1 Creating move request. Move request state: None [AR]  
+> 20190502115903127 MIGUSER1 Move request created and set to suspend. [OK]  
+> 20190502115903139 MIGUSER1 Not waiting for move request to complete.  
+> 20190502115903146 MIGUSER1 Ready [OK]  
+
+The following command completes the migration. Note that this time the *wait* parameter has been set to TRUE. This means the cmdlet will wait for the mailbox to be migrated (up to 12 hours) and then will complete the post migration tasks. Also note that the *link* parameter has been set to TRUE. This will link the mailbox back to the source domain. This is useful if you need to migrate mailboxes before you can actually migrate the users to a new AD forest.
+
+
+
 
 
 
