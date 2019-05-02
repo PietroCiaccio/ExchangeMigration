@@ -355,6 +355,8 @@ The following command gets detailed information for a single mailbox -
 > 20190502145615789 02/05/2019 14:56:15 MIGUSER1 OK   Ready  
 > 20190502145615801 02/05/2019 14:56:15 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145445' ended  
 
+If you have access to an SMTP relay you can instruct the batch cmdlets to email you when the jobs is done by populating the *ReportSMTP* and *SMTPServer* parameters, where ReportSMTP is the recipient email address.
+
 ## Distribution Groups
 
 Distribution group are managed in the same way as mailboxes but with their associated cmdlets.
