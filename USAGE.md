@@ -338,25 +338,26 @@ The following command gets more information on the job -
 
 The following command gets detailed information for a single mailbox -
 
-
+> PS C:\> Get-EMLogs -Identity miguser1 | ft  
+> 
 > Ref               Timestamp           Identity                            Type Comment  
 > ---               ---------           --------                            ---- -------  
-> 20190502145300219 02/05/2019 14:53:00 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145234' started
-> 20190502145300311 02/05/2019 14:53:00 MIGUSER1 GO   MIGRATE mailbox
-> 20190502145300331 02/05/2019 14:53:00 MIGUSER1 LOG  SourceDomain: GROUP.NET; TargetDomain: LVFS.NET; Activity: MIGRATE; Mode: PREPARE; MoveMailbo...
-> 20190502145301792 02/05/2019 14:53:01 MIGUSER1 ERR  Issue getting domain information for source domain 'GROUP.NET'
-> 20190502145301832 02/05/2019 14:53:01 MIGUSER1 ERR  Issue getting mail enabled user from source domain 'GROUP.NET'
-> 20190502145543088 02/05/2019 14:55:43 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145445' started
-> 20190502145543147 02/05/2019 14:55:43 MIGUSER1 GO   MIGRATE mailbox
-> 20190502145543163 02/05/2019 14:55:43 MIGUSER1 LOG  SourceDomain: GROUP.NET; TargetDomain: LVFS.NET; Activity: MIGRATE; Mode: PREPARE; MoveMailbo...
-> 20190502145549958 02/05/2019 14:55:49 MIGUSER1 LOG  SourceType: RemoteUserMailbox; SourcePDC: ORMNDS001.GROUP.NET; TargetType: UserMailbox; Targe...
-> 20190502145550018 02/05/2019 14:55:50 MIGUSER1 LOG  Primary: TARGET
-> 20190502145551246 02/05/2019 14:55:51 MIGUSER1 WARN Secondary enabled attr does not match primary
-> 20190502145556485 02/05/2019 14:55:56 MIGUSER1 LOG  Move request state: Completed
-> 20190502145559633 02/05/2019 14:55:59 MIGUSER1 LOG  Checking full access permissions on primary
-> 20190502145602825 02/05/2019 14:56:02 MIGUSER1 LOG  Checking send-as permissions on primary
-> 20190502145615789 02/05/2019 14:56:15 MIGUSER1 OK   Ready
-> 20190502145615801 02/05/2019 14:56:15 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145445' ended
+> 20190502145300219 02/05/2019 14:53:00 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145234' started  
+> 20190502145300311 02/05/2019 14:53:00 MIGUSER1 GO   MIGRATE mailbox  
+> 20190502145300331 02/05/2019 14:53:00 MIGUSER1 LOG  SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activ ...  
+> 20190502145301792 02/05/2019 14:53:01 MIGUSER1 ERR  Issue getting domain information for source domain 'DOMAINA.NET'  
+> 20190502145301832 02/05/2019 14:53:01 MIGUSER1 ERR  Issue getting mail enabled user from source domain 'DOMAINA.NET'  
+> 20190502145543088 02/05/2019 14:55:43 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145445' started  
+> 20190502145543147 02/05/2019 14:55:43 MIGUSER1 GO   MIGRATE mailbox  
+> 20190502145543163 02/05/2019 14:55:43 MIGUSER1 LOG  SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activ ...  
+> 20190502145549958 02/05/2019 14:55:49 MIGUSER1 LOG  SourceType: RemoteUserMailbox; SourcePDC: SERVER ...  
+> 20190502145550018 02/05/2019 14:55:50 MIGUSER1 LOG  Primary: TARGET  
+> 20190502145551246 02/05/2019 14:55:51 MIGUSER1 WARN Secondary enabled attr does not match primary  
+> 20190502145556485 02/05/2019 14:55:56 MIGUSER1 LOG  Move request state: Completed  
+> 20190502145559633 02/05/2019 14:55:59 MIGUSER1 LOG  Checking full access permissions on primary  
+> 20190502145602825 02/05/2019 14:56:02 MIGUSER1 LOG  Checking send-as permissions on primary  
+> 20190502145615789 02/05/2019 14:56:15 MIGUSER1 OK   Ready  
+> 20190502145615801 02/05/2019 14:56:15 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145445' ended  
 
 
 
