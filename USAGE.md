@@ -304,7 +304,17 @@ EM includes a cmdlet for handling a large number of mailboxes.
  
 This is used in a similar way to Start-EMProcessMailbox with the exception of providing an array of samaccountname strings to the *samaccountname* parameter. The cmdlet will then invoke the Start-EMProcessMailbox cmdlet is a controlled way to automate the action across many mailboxes.
 
+This example will show how to setup a couple of mailboxes.
 
+> PS C:\> $sams = @()  
+> PS C:\> $sams += "miguser1"  
+> PS C:\> $sams += "miguser2"  
+
+The follow command will prepare all samaccountnames in the array.
+
+> PS C:\> Start-EMProcessMailboxBatch -Samaccountnames $sams -Mode Prepare  
+
+You will see a progress bar and  on completion 
 
 
 
