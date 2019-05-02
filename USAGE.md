@@ -101,6 +101,19 @@ This cmdlet will test your configuration. An example result is below.
 > Target end point 'endpoint.domainB.net' [OK]  
 > Target GAL OU 'OU=GAL,DC=DOMAINB,DC=NET' [OK]  
 
+### Module Defaults
+
+The module uses the following defaults unless overwritten by Write-EMConfiguration or parameters of other cmdlets discussed later in this document -
+
+ - Activity = "Migrate"  
+ - Mode = "LogOnly"  
+ - MoveMailbox = "No"  
+ - Link = $false  
+ - Separate = $false  
+ - LogPath = "C:\Temp\EM"  
+ - Threads = 10  
+ - Wait = $false  
+
 ## Migrating a Mailbox
 
 To migrate a single mailbox you would use the following cmdlet -
