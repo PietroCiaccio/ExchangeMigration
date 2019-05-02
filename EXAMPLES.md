@@ -22,6 +22,6 @@ Start-EMProcessMailbox -Samaccountname user1 -Mode Prepare -MoveMailbox Yes
 
 **Prepare a mailbox, migrate, wait for completion, and perform post migration tasks**
 
-As above, but will wait and perform post migration tasks
+As above, but will wait and perform post migration tasks.
 
 Start-EMProcessMailbox -Samaccountname user1 -Mode Prepare -MoveMailbox Yes -Wait $true
