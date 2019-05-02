@@ -79,3 +79,32 @@ After you have created the configuration file you will see the following when im
 This cmdlet is used to create the configuration file. This will overwrite any configuration file that exists.
 
 Write-EMConfiguration [-SourceDomain] <string> [-SourceEndPoint] <string> [-SourceGALSyncOU] <string> [-TargetDomain] <string> [-TargetEndPoint] <string> [-TargetGALSyncOU] <string> [[-LogPath] <string>]
+ 
+### Read-EMConfiguration
+
+This cmdlet is used to read the configuration file.
+
+### Get-EMConfiguration
+
+This cmdlet is used to display the configuration that has been loaded for the module to use. This is slightly different to Read-EMConfiguration.
+
+### Test-EMConfiguration
+
+This cmdlet will test your configuration. An example result is below.
+
+> Source credential 'domainA\userA' [OK]
+> Source domain 'domainA.net' [OK]
+> Source end point 'endpoint.domainA.net' [OK]
+> Source GAL OU 'OU=GAL,DC=DOMAINA,DC=NET' [OK]
+> Target credential 'domainB\userB' [OK]
+> Target domain 'domainB.net' [OK]
+> Target end point 'endpoint.domainB.net' [OK]
+> Target GAL OU 'OU=GAL,DC=DOMAINB,DC=NET' [OK]
+
+
+
+
+
+
+
+
