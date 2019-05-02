@@ -217,6 +217,27 @@ The below example takes things further. We are now instructing the mode to *prep
 > 20190502112335884 MIGUSER1 'DOMAINB\miguser2' does not exist in domain 'DOMAINB.NET' [WARN]  
 > 20190502112335901 MIGUSER1 Ready [OK] 
 
+The same command has been run again but this time it has been more successful because all user objects were present in the target domain.
+
+> PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare  
+> 20190502115454173 MIGUSER1 MIGRATE mailbox  
+> 20190502115454184 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: P...  
+> 20190502115500028 MIGUSER1 SourceType: UserMailbox; SourcePDC: ORMNDS001.DOMAINA.NET; TargetType: Remote...  
+> 20190502115500037 MIGUSER1 Primary: SOURCE  
+> 20190502115501025 MIGUSER1 Secondary altRecipient attr update required [AR]  
+> 20190502115501256 MIGUSER1 Secondary deliverAndRedirect attr update required [AR]  
+> 20190502115501294 MIGUSER1 Secondary proxyaddresses attr update required [AR]  
+> 20190502115502349 MIGUSER1 Secondary publicdelegates attr update required [AR]  
+> 20190502115503338 MIGUSER1 Secondary msExchDelegateListLink attr update required [AR]  
+> 20190502115503633 MIGUSER1 Secondary user prepared in domain 'DOMAINB.NET' [OK]  
+> 20190502115506610 MIGUSER1 Checking full access permissions on primary  
+> 20190502115508764 MIGUSER1 'DOMAINB\miguser2' full access missing [AR]  
+> 20190502115517699 MIGUSER1 'DOMAINB\miguser2' full access added [OK]  
+> 20190502115517714 MIGUSER1 Checking send-as permissions on primary  
+> 20190502115523355 MIGUSER1 'DOMAINB\miguser2' send-as missing [AR]  
+> 20190502115526012 MIGUSER1 'DOMAINB\miguser2' send-as added [OK]  
+> 20190502115526025 MIGUSER1 Ready [OK]  
+
 
 
 
