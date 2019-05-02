@@ -376,6 +376,8 @@ If you choose GALSYNC as an option for the *activity* parameter for either mailb
  - Cross forest settings will be removed (if they exist).
  - The user object will be disabled.
  
+It should be noted that GALSync should only be used for objects you do not wish to fully migrate but are needed for the purposes of managing the coexistence experience.
+ 
  **Distribution Groups**
  
   - If the group object is missing from the target domain then one will be created in the GALSync OU defined in the EM configuration file.
@@ -386,8 +388,6 @@ If you choose GALSYNC as an option for the *activity* parameter for either mailb
  - Membership will be removed.
  - Permissions to send to the distribution group will be removed.
  
-It should be noted that GALSync should only be used for objects you do not wish to fully migrate but are needed for the purposes of managing the coexistence experience.
- 
  ## Separation
  
  This is an option with the mailbox cmdlets only. The *separate* parameter when set to TRUE will perform the following -
@@ -397,7 +397,13 @@ It should be noted that GALSync should only be used for objects you do not wish 
   - The secondary user object will be disabled.
   - Cross forest settings and permissions will be removed (if they exist).
   
- 
+So in separation coexistence support is removed but the secondary object exists and can be used to meet the purpose of the project.
+
+## Final Notes
+
+The majority of users interested in using this module will most likely just want to use the *migrate* activity to meet their requirements.
+
+The author needed to include *GALSync* and *Separate* to meet the project requirements where the organization was being separated into two separate organizations but needed to work in a coexistence state until a set time. 
   
   
  
