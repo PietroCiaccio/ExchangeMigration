@@ -27,6 +27,7 @@ As above, but will wait and perform post migration tasks.
 *Start-EMProcessMailbox -Samaccountname user1 -Mode Prepare -MoveMailbox Yes -Wait $true*
 
 **Prepare a mailbox and link**
+
 These will link the mailbox to the secondary domain user object.
 
 *Start-EMProcessMailbox -Samaccountname user1 -Mode Prepare -MoveMailbox Yes -Wait $true -Link $true*
