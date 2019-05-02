@@ -47,7 +47,7 @@ At the time of writing this document EM was created to meet the migration requir
 **Out of Scope**
 
 - Organizational migration preparation tasks.
-- Organization post migration tasks.
+- Organizational post migration tasks.
 - Object creation.
 - Contacts (support to be added in the future)
 
