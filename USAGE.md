@@ -11,6 +11,12 @@ If you explore the cmdlets available with the EM Powershell Module you will see 
 - Get-EMConfiguration
 - Test-EMConfiguration
 
+**Logs Management**
+
+- Get-EMLogs
+- Clear-EMLogs
+- Start-EMLogsArchive
+
 **Processing Individual Objects**
 
 - Start-EMProcessMailbox
@@ -20,12 +26,6 @@ If you explore the cmdlets available with the EM Powershell Module you will see 
 
 - Start-EMProcessMailboxBatch
 - Start-EMProcessDistributionGroupBatch
-
-**Logs Management**
-
-- Get-EMLogs
-- Clear-EMLogs
-- Start-EMLogsArchive
 
 ## Importing the Module and Setup
 
@@ -74,12 +74,10 @@ After you have created the configuration file you will see the following when im
 > To create a new configuration use the 'Write-EMConfiguration' cmdlet.  
 > To test configuration data settings use 'Test-EMConfiguraion'  
 
-**Write-EMConfiguration**
-
+**Write-EMConfiguration** [-SourceDomain] <string> [-SourceEndPoint] <string> [-SourceGALSyncOU] <string> [-TargetDomain] <string> [-TargetEndPoint] <string> [-TargetGALSyncOU] <string> [[-LogPath] <string>]
+ 
 This cmdlet is used to create the configuration file. This will overwrite any configuration file that exists.
 
-Write-EMConfiguration [-SourceDomain] <string> [-SourceEndPoint] <string> [-SourceGALSyncOU] <string> [-TargetDomain] <string> [-TargetEndPoint] <string> [-TargetGALSyncOU] <string> [[-LogPath] <string>]
- 
 **Read-EMConfiguration**
 
 This cmdlet is used to read the configuration file.
@@ -113,6 +111,14 @@ The module uses the following defaults unless overwritten by Write-EMConfigurati
  - LogPath = "C:\Temp\EM"  
  - Threads = 10  
  - Wait = $false  
+ 
+## Logs Management
+
+Get-EMLogs [-Identity] <string> [[-Type] <string>] [[-Ref] <string>]  [<CommonParameters>]
+ 
+Clear-EMLogs
+
+Start-EMLogsArchive
 
 ## Preparating Mailboxes
 
