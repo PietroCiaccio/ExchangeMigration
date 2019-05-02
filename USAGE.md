@@ -27,7 +27,7 @@ If you explore the cmdlets available with the EM Powershell Module you will see 
 - Clear-EMLogs
 - Start-EMLogsArchive
 
-### Importing the Module
+## Importing the Module and Setup
 
 Run the following -
 
@@ -100,6 +100,9 @@ This cmdlet will test your configuration. An example result is below.
 > Target domain 'domainB.net' [OK]  
 > Target end point 'endpoint.domainB.net' [OK]  
 > Target GAL OU 'OU=GAL,DC=DOMAINB,DC=NET' [OK]  
+
+## Migrating a Mailbox
+
 
 
 
