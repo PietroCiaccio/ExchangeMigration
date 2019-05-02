@@ -77,8 +77,9 @@ After you have created the configuration file you will see the following when im
 
 **Write-EMConfiguration** [-SourceDomain] <string> [-SourceEndPoint] <string> [-SourceGALSyncOU] <string> [-TargetDomain] <string> [-TargetEndPoint] <string> [-TargetGALSyncOU] <string> [[-LogPath] <string>]
  
-This cmdlet is used to create the configuration file. This will overwrite any configuration file that exists.
+This cmdlet is used to create the configuration file. This will overwrite any configuration file that exists. The configuration file is created in the following location.
 
+C:\Users\samaccountname\AppData\Local\EM\ExchangeMigration.config
 
 **Read-EMConfiguration**
 
@@ -314,7 +315,49 @@ The follow command will prepare all samaccountnames in the array.
 
 > PS C:\> Start-EMProcessMailboxBatch -Samaccountnames $sams -Mode Prepare  
 
-You will see a progress bar and  on completion 
+You will see a progress bar and on completion you will see the following overview -
+
+> PS C:\> Start-EMProcessMailboxBatch -Samaccountnames $sams -Mode Prepare  
+>  
+> Job:            EMProcessMailboxBatch20190502145445  
+> Started:        05/02/2019 14:54:45  
+> Completing:     05/02/2019 14:54:49  
+> Completed:      05/02/2019 14:56:19  
+> Duration:       2 minutes  
+> Summary:        Total 2 ERR 0  
+
+The following command gets more information on the job -
+
+> PS C:\> Get-EMLogs -Identity EMProcessMailboxBatch20190502145445 | ft  
+>  
+> Ref               Timestamp           Identity                            Type Comment  
+> ---               ---------           --------                            ---- -------  
+> 20190502145445753 02/05/2019 14:54:45 EMPROCESSMAILBOXBATCH20190502145445 LOG  Samaccountname: miguser1 Sou ...  
+> 20190502145447240 02/05/2019 14:54:47 EMPROCESSMAILBOXBATCH20190502145445 LOG  Samaccountname: miguser2 Sou ...  
+> 20190502145619711 02/05/2019 14:56:19 EMPROCESSMAILBOXBATCH20190502145445 LOG  Total 2 ERR 0  
+
+The following command gets detailed information for a single mailbox -
+
+
+> Ref               Timestamp           Identity                            Type Comment  
+> ---               ---------           --------                            ---- -------  
+> 20190502145300219 02/05/2019 14:53:00 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145234' started
+> 20190502145300311 02/05/2019 14:53:00 MIGUSER1 GO   MIGRATE mailbox
+> 20190502145300331 02/05/2019 14:53:00 MIGUSER1 LOG  SourceDomain: GROUP.NET; TargetDomain: LVFS.NET; Activity: MIGRATE; Mode: PREPARE; MoveMailbo...
+> 20190502145301792 02/05/2019 14:53:01 MIGUSER1 ERR  Issue getting domain information for source domain 'GROUP.NET'
+> 20190502145301832 02/05/2019 14:53:01 MIGUSER1 ERR  Issue getting mail enabled user from source domain 'GROUP.NET'
+> 20190502145543088 02/05/2019 14:55:43 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145445' started
+> 20190502145543147 02/05/2019 14:55:43 MIGUSER1 GO   MIGRATE mailbox
+> 20190502145543163 02/05/2019 14:55:43 MIGUSER1 LOG  SourceDomain: GROUP.NET; TargetDomain: LVFS.NET; Activity: MIGRATE; Mode: PREPARE; MoveMailbo...
+> 20190502145549958 02/05/2019 14:55:49 MIGUSER1 LOG  SourceType: RemoteUserMailbox; SourcePDC: ORMNDS001.GROUP.NET; TargetType: UserMailbox; Targe...
+> 20190502145550018 02/05/2019 14:55:50 MIGUSER1 LOG  Primary: TARGET
+> 20190502145551246 02/05/2019 14:55:51 MIGUSER1 WARN Secondary enabled attr does not match primary
+> 20190502145556485 02/05/2019 14:55:56 MIGUSER1 LOG  Move request state: Completed
+> 20190502145559633 02/05/2019 14:55:59 MIGUSER1 LOG  Checking full access permissions on primary
+> 20190502145602825 02/05/2019 14:56:02 MIGUSER1 LOG  Checking send-as permissions on primary
+> 20190502145615789 02/05/2019 14:56:15 MIGUSER1 OK   Ready
+> 20190502145615801 02/05/2019 14:56:15 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145445' ended
+
 
 
 
