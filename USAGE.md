@@ -122,7 +122,23 @@ To migrate a single mailbox you would use the following cmdlet -
 
 Start-EMProcessMailbox [-Samaccountname] <string> [[-SourceCred] <pscredential>] [[-TargetCred] <pscredential>] [[-SourceDomain] <string>] [[-TargetDomain] <string>] [[-Activity] {Migrate | GALSync}] [[-Mode] {Prepare | LogOnly}] [[-MoveMailbox] {Yes | No | Suspend}] [[-SourceEndPoint] <string>] [[-TargetEndPoint] <string>] [[-Link] <bool>] [[-Separate] <bool>] [[-Wait] <bool>]  [<CommonParameters>]
  
- At a minimum you must specify the *samaccountname* of the source object to be migrated
+ At a minimum you must specify the *samaccountname* of the source object to be migrated.
+ 
+ Example will provide a log only result of the mailbox in scope.
+ 
+> PS C:\> Start-EMProcessMailbox -Samaccountname miguser1  
+> 20190502104602563 MIGUSER1 MIGRATE mailbox  
+> 20190502104602588 MIGUSER1 SourceDomain: GROUP.NET; TargetDomain: LVFS.NET; Activity: MIGRATE; Mode: LOGONLY; MoveMailbox: NO; SourceEndPoint: ORMXCA001.GROUP.NET...  
+> 20190502104606856 MIGUSER1 Target not found in target domain 'LVFS.NET' and is required for activity 'MIGRATE' [ERR]  
+> Target not found in target domain 'LVFS.NET' and is required for activity 'MIGRATE'  
+> At C:\_work\migration\ExchangeMigration.psm1:96 char:4  
+> +             throw $comment  
+> +             ~~~~~~~~~~~~~~  
+>     + CategoryInfo          : OperationStopped: (Target not foun...ivity 'MIGRATE':String) [], RuntimeException  
+>     + FullyQualifiedErrorId : Target not found in target domain 'LVFS.NET' and is required for activity 'MIGRATE'   
+
+
+ 
 
 
 
