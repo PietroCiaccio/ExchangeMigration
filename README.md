@@ -47,6 +47,7 @@ At the time of writing this document EM was created to meet the migration requir
 **Out of Scope**
 
 - Organizational migration preparation tasks.
+- Organization post migration tasks.
 - Object creation.
 - Contacts (support to be added in the future)
 
@@ -55,14 +56,15 @@ At the time of writing this document EM was created to meet the migration requir
 The following needs to be configured before using EM -
 
 - Cross-forest two way Active Directory trust.
-- Two way CA (Certificate Authority) trust.<br> 
-- Two way internal network connectivity.<br> 
-- Two way DNS name resolution.<br> 
+- Two way CA (Certificate Authority) trust.
+- Two way internal network connectivity.
+- Two way DNS name resolution.
 - Fully authoritative accepted domain using the format mail.on*Domain* (Domain is the AD domain FQDN for SMTP routing from one Exchange Org to the other. Must be done for both ExchOrgs, e.g. mail.on*domain1.net* in Exchange Org 1 and mail.on*domain2.net* in Exchange Org 2. The format will be used in the targetaddress attributes of mail enabled objects when forwarding to the opposing ExchOrg).
 - Cross-forest availability.
 - Cross-forest SMTP routing domains and internal connectors using the format mail.onADDomain (Will be used for routing emails to the correct ExchOrg hosting the mailbox. Supports cross-forest mail flow and acts as the resource locator for availability and autodiscover services).
 - MRSProxy settings must be enabled in order to cross-forest migrate mailboxes.
 - Policies, such as retention policies and retention tags, must be migrated in advance in order for them to be correctly applied to the target ExchOrg mail enabled objects.
+- Remote domains configured to correctly handle SMTP routing domains, e.g. isInternal set to TRUE and preferences to your configuration.
  
 EM should only be used to mail enable objects, for GAL synchronization, and to migrate mailboxes. The creation of objects in the target AD should be accomplished using AD migrations tools, such as the Microsoft ADMT (Active Directory Migration Tool) or another third-party AD migration tool, e.g. from Quest. It is important to note that AD migration tools must exclude all Exchange related attributes. All changes made by EM must not be overwritten. <br> 
 
