@@ -92,14 +92,14 @@ This cmdlet is used to display the configuration that has been loaded for the mo
 
 This cmdlet will test your configuration. An example result is below.
 
-> Source credential 'domainA\userA' [OK]
-> Source domain 'domainA.net' [OK]
-> Source end point 'endpoint.domainA.net' [OK]
-> Source GAL OU 'OU=GAL,DC=DOMAINA,DC=NET' [OK]
-> Target credential 'domainB\userB' [OK]
-> Target domain 'domainB.net' [OK]
-> Target end point 'endpoint.domainB.net' [OK]
-> Target GAL OU 'OU=GAL,DC=DOMAINB,DC=NET' [OK]
+> Source credential 'domainA\userA' [OK]  
+> Source domain 'domainA.net' [OK]  
+> Source end point 'endpoint.domainA.net' [OK]  
+> Source GAL OU 'OU=GAL,DC=DOMAINA,DC=NET' [OK]  
+> Target credential 'domainB\userB' [OK]  
+> Target domain 'domainB.net' [OK]  
+> Target end point 'endpoint.domainB.net' [OK]  
+> Target GAL OU 'OU=GAL,DC=DOMAINB,DC=NET' [OK]  
 
 
 
