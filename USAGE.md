@@ -128,7 +128,7 @@ The below example will provide a log only result of the mailbox in scope. Please
  
 > PS C:\> Start-EMProcessMailbox -Samaccountname miguser1  
 > 20190502104602563 MIGUSER1 MIGRATE mailbox  
-> 20190502104602588 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: LOGONLY; MoveMailbox: NO; SourceEndPoint: ENDPOINT.DOMAINA.NET...  
+> 20190502104602588 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mo ...  
 > 20190502104606856 MIGUSER1 Target not found in target domain 'DOMAINB.NET' and is required for activity 'MIGRATE' [ERR]  
 > Target not found in target domain 'DOMAINB.NET' and is required for activity 'MIGRATE'  
 > At C:\_work\migration\ExchangeMigration.psm1:96 char:4  
@@ -137,8 +137,16 @@ The below example will provide a log only result of the mailbox in scope. Please
 >     + CategoryInfo          : OperationStopped: (Target not foun...ivity 'MIGRATE':String) [], RuntimeException  
 >     + FullyQualifiedErrorId : Target not found in target domain 'DOMAINB.NET' and is required for activity 'MIGRATE'   
 
+The below example is the same command as above however it has completed successfully because the target user object exists. We can see that the *targettype* is null and therefore no preparation of this target has been completed at all.
 
- 
+> PS C:\> Start-EMProcessMailbox -Samaccountname miguser1  
+> 20190502105334170 MIGUSER1 MIGRATE mailbox  
+> 20190502105334184 MIGUSER1 SourceDomain: GROUP.NET; TargetDomain: LVFS.NET; Activity: MIGRATE; Mode: LOGONLY; Mo...  
+> 20190502105337920 MIGUSER1 SourceType: UserMailbox; SourcePDC: ORMNDS001.GROUP.NET; TargetType: ; TargetPDC: MPR...  
+> 20190502105337958 MIGUSER1 Source is primary. Target to be mail enabled [AR]  
+> 20190502105337990 MIGUSER1 Ready 
+
+
 
 
 
