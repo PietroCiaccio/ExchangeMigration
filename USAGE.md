@@ -114,9 +114,11 @@ The module uses the following defaults unless overwritten by Write-EMConfigurati
  - Threads = 10  
  - Wait = $false  
 
-## Migrating a Mailbox
+## Preparating Mailboxes
 
-To migrate a single mailbox you would use the following cmdlet -
+Please note, all user objects should have been created in the target domain before mailbox preparation is implemented.
+
+To prepare a single mailbox you would use the following cmdlet -
 
 **Start-EMProcessMailbox**
 
@@ -141,11 +143,55 @@ The below example is the same command as above however it has completed successf
 
 > PS C:\> Start-EMProcessMailbox -Samaccountname miguser1  
 > 20190502105334170 MIGUSER1 MIGRATE mailbox  
-> 20190502105334184 MIGUSER1 SourceDomain: GROUP.NET; TargetDomain: LVFS.NET; Activity: MIGRATE; Mode: LOGONLY; Mo...  
-> 20190502105337920 MIGUSER1 SourceType: UserMailbox; SourcePDC: ORMNDS001.GROUP.NET; TargetType: ; TargetPDC: MPR...  
+> 20190502105334184 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: LOGONLY; Mo...  
+> 20190502105337920 MIGUSER1 SourceType: UserMailbox; SourcePDC: ENDPOINT.DOMAINA.NET; TargetType: ; TargetPDC: MPR...  
 > 20190502105337958 MIGUSER1 Source is primary. Target to be mail enabled [AR]  
 > 20190502105337990 MIGUSER1 Ready 
 
+
+> PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare
+> 20190502112256485 MIGUSER1 MIGRATE mailbox  
+> 20190502112256495 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: PREPARE; Mo...  
+> 20190502112302237 MIGUSER1 SourceType: UserMailbox; SourcePDC: ENDPOINT.DOMAINA.NET; TargetType: ; TargetPDC: MPR...  
+> 20190502112302258 MIGUSER1 Source is primary. Target to be mail enabled [AR]  
+> 20190502112306637 MIGUSER1 Waiting for mail enabled object to be ready in target domain 'DOMAINB.NET'. Waiting 300 ...  
+> 20190502112309920 MIGUSER1 Waited 8 seconds  
+> 20190502112309929 MIGUSER1 mail enabled OK in target domain 'DOMAINB.NET'  
+> 20190502112309939 MIGUSER1 MIGRATE mailbox  
+> 20190502112309948 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: PREPARE; Mo...  
+> 20190502112313760 MIGUSER1 SourceType: UserMailbox; SourcePDC: ENDPOINT.DOMAINA.NET; TargetType: MailUser; Target...  
+> 20190502112313785 MIGUSER1 Primary: SOURCE  
+> 20190502112313863 MIGUSER1 Secondary msExchMailboxGuid attr update required [AR]  
+> 20190502112314086 MIGUSER1 Secondary textEncodedORAddress attr update required [AR]  
+> 20190502112314117 MIGUSER1 Secondary msExchHideFromAddressLists attr update required [AR]  
+> 20190502112314128 MIGUSER1 Primary msExchRequireAuthToSendTo attr update required [AR]  
+> 20190502112314360 MIGUSER1 Secondary targetaddress attr update required [AR]  
+> 20190502112314372 MIGUSER1 Secondary mDBOverHardQuotaLimit attr update required [AR]  
+> 20190502112314390 MIGUSER1 Secondary mDBOverQuotaLimit attr update required [AR]  
+> 20190502112314412 MIGUSER1 Secondary mDBStorageQuota attr update required [AR]  
+> 20190502112314430 MIGUSER1 Secondary mDBUseDefaults attr update required [AR]  
+> 20190502112314442 MIGUSER1 Secondary delivContLength attr update required [AR]  
+> 20190502112314456 MIGUSER1 Secondary submissionContLength attr update required [AR]  
+> 20190502112315398 MIGUSER1 'miguser2' altRecipient no object found in secondary domain and will be excluded [WARN]  
+> 20190502112315431 MIGUSER1 Primary proxyaddresses attr update required [AR]  
+> 20190502112315457 MIGUSER1 Secondary proxyaddresses attr update required [AR]  
+> 20190502112315475 MIGUSER1 Converting secondary to remote user mailbox [AR]  
+> 20190502112315494 MIGUSER1 Secondary msExchModerationFlags attr update required [AR]  
+> 20190502112316460 MIGUSER1 'miguser2' publicdelegates no object found in secondary domain and will be excluded [WARN]  
+> 20190502112317399 MIGUSER1 'miguser2' msExchDelegateListLink no object found in secondary domain and will be exc... [WARN]  
+> 20190502112317424 MIGUSER1 Primary msExchPoliciesExcluded attr update required [AR]  
+> 20190502112317441 MIGUSER1 Primary msExchPoliciesIncluded attr update required [AR]  
+> 20190502112317746 MIGUSER1 Primary user prepared in domain 'DOMAINA.NET' [OK]  
+> 20190502112318041 MIGUSER1 Secondary user prepared in domain 'DOMAINB.NET' [OK]  
+> 20190502112318072 MIGUSER1 Waiting for secondary AD changes to be ready. Waiting 300 seconds max  
+> 20190502112321027 MIGUSER1 Waited 3 seconds  
+> 20190502112324004 MIGUSER1 Checking full access permissions on primary  
+> 20190502112328819 MIGUSER1 'DOMAINB\miguser2' full access missing [AR]  
+> 20190502112329239 MIGUSER1 'DOMAINB\miguser2' does not exist in domain 'DOMAINB.NET' [WARN]  
+> 20190502112329267 MIGUSER1 Checking send-as permissions on primary  
+> 20190502112335434 MIGUSER1 'DOMAINB\miguser2' send-as missing [AR]  
+> 20190502112335884 MIGUSER1 'DOMAINB\miguser2' does not exist in domain 'DOMAINB.NET' [WARN]  
+> 20190502112335901 MIGUSER1 Ready [OK] 
 
 
 
