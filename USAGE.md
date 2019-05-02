@@ -139,7 +139,7 @@ Logging terminology -
  - WARN: Issue detected but error action will be to continue.
  - ERR: Critical issue detected and an error has been thrown. Unable to continue. 
 
-## Preparating Mailboxes
+## Preparing Mailboxes
 
 Please note, all user objects should have been created in the target domain before mailbox preparation is implemented.
 
@@ -173,6 +173,7 @@ The below example is the same command as above however it has completed successf
 > 20190502105337958 MIGUSER1 Source is primary. Target to be mail enabled [AR]  
 > 20190502105337990 MIGUSER1 Ready 
 
+The below example takes things further. We are now instructing the mode to *prepare* rather than *logonly*. You can see a number of actions we taken on both the source and target objects. There were also some warnings where an action couldn't be completed because a target object did not exist yet. It did complete successfully however. 
 
 > PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare
 > 20190502112256485 MIGUSER1 MIGRATE mailbox  
