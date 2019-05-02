@@ -404,8 +404,16 @@ So in separation coexistence support is removed but the secondary object exists 
 The majority of users interested in using this module will most likely just want to use the *migrate* activity to meet their requirements.
 
 The author needed to include *GALSync* and *Separate* to meet the project requirements where the organization was being separated into two separate organizations but needed to work in a coexistence state until a set time. 
-  
-  
- 
 
+**Guidance**
 
+It is advised to use EM as follows -
+
+ - Use *Start-EMProcessMailboxBatch* to prepare all objects in the source and target Exchange Organizations.
+ - Use *Start-EMProcessDistributionGroupBatch* to prepare all group objects in the source and target Exchange Organizations.
+
+At this point the Exchange Organizations are prepared for coexistence and migration. Then continue as follows -
+
+ - Use either *Start-EMProcessMailbox* or *Start-EMProcessMailboxBatch* to migrate mailboxes.
+ - For the best migration experience mailboxes that have relationships should be migrated together.
+ - Start will smaller numbers and then increase until the migration has been completed.
