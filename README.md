@@ -2,7 +2,7 @@
 
 The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Exchange cross-forest migration.
 
-*EM is still in testing and is therefore being marked as an alpha release.*
+*Although complete, EM is still in testing and is therefore being marked as an alpha release.*
 
 **Developed using the following**
 
