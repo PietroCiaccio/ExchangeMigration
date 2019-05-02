@@ -167,7 +167,7 @@ The below example is the same command as above however it has completed successf
 > PS C:\> Start-EMProcessMailbox -Samaccountname miguser1  
 > 20190502105334170 MIGUSER1 MIGRATE mailbox  
 > 20190502105334184 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: LOGONLY; Mo...  
-> 20190502105337920 MIGUSER1 SourceType: UserMailbox; SourcePDC: ENDPOINT.DOMAINA.NET; TargetType: ; TargetPDC: MPR...  
+> 20190502105337920 MIGUSER1 SourceType: UserMailbox; SourcePDC: SERVER.DOMAINA.NET; TargetType: ; TargetPDC: MPR...  
 > 20190502105337958 MIGUSER1 Source is primary. Target to be mail enabled [AR]  
 > 20190502105337990 MIGUSER1 Ready 
 
@@ -176,14 +176,14 @@ The below example takes things further. We are now instructing the mode to *prep
 > PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare  
 > 20190502112256485 MIGUSER1 MIGRATE mailbox  
 > 20190502112256495 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: PREPARE; Mo...  
-> 20190502112302237 MIGUSER1 SourceType: UserMailbox; SourcePDC: ENDPOINT.DOMAINA.NET; TargetType: ; TargetPDC: MPR...  
+> 20190502112302237 MIGUSER1 SourceType: UserMailbox; SourcePDC: SERVER.DOMAINA.NET; TargetType: ; TargetPDC: MPR...  
 > 20190502112302258 MIGUSER1 Source is primary. Target to be mail enabled [AR]  
 > 20190502112306637 MIGUSER1 Waiting for mail enabled object to be ready in target domain 'DOMAINB.NET'. Waiting 300 ...  
 > 20190502112309920 MIGUSER1 Waited 8 seconds  
 > 20190502112309929 MIGUSER1 mail enabled OK in target domain 'DOMAINB.NET'  
 > 20190502112309939 MIGUSER1 MIGRATE mailbox  
 > 20190502112309948 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: PREPARE; Mo...  
-> 20190502112313760 MIGUSER1 SourceType: UserMailbox; SourcePDC: ENDPOINT.DOMAINA.NET; TargetType: MailUser; Target...  
+> 20190502112313760 MIGUSER1 SourceType: UserMailbox; SourcePDC: SERVER.DOMAINA.NET; TargetType: MailUser; Target...  
 > 20190502112313785 MIGUSER1 Primary: SOURCE  
 > 20190502112313863 MIGUSER1 Secondary msExchMailboxGuid attr update required [AR]  
 > 20190502112314086 MIGUSER1 Secondary textEncodedORAddress attr update required [AR]  
@@ -222,7 +222,7 @@ The same command has been run again but this time it has been more successful be
 > PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare  
 > 20190502115454173 MIGUSER1 MIGRATE mailbox  
 > 20190502115454184 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: P...  
-> 20190502115500028 MIGUSER1 SourceType: UserMailbox; SourcePDC: ORMNDS001.DOMAINA.NET; TargetType: Remote...  
+> 20190502115500028 MIGUSER1 SourceType: UserMailbox; SourcePDC: SERVER.DOMAINA.NET; TargetType: Remote...  
 > 20190502115500037 MIGUSER1 Primary: SOURCE  
 > 20190502115501025 MIGUSER1 Secondary altRecipient attr update required [AR]  
 > 20190502115501256 MIGUSER1 Secondary deliverAndRedirect attr update required [AR]  
@@ -247,7 +247,7 @@ The following command will create a move request in the target Exchange Organiza
 > PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare -MoveMailbox Suspend  
 > 20190502115843968 MIGUSER1 MIGRATE mailbox  
 > 20190502115843981 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: P...  
-> 20190502115848443 MIGUSER1 SourceType: UserMailbox; SourcePDC: ORMNDS001.DOMAINA.NET; TargetType: Remote...  
+> 20190502115848443 MIGUSER1 SourceType: UserMailbox; SourcePDC: SERVER.DOMAINA.NET; TargetType: Remote...  
 > 20190502115848450 MIGUSER1 Primary: SOURCE  
 > 20190502115857083 MIGUSER1 Creating move request. Move request state: None [AR]  
 > 20190502115903127 MIGUSER1 Move request created and set to suspend. [OK]  
@@ -256,10 +256,53 @@ The following command will create a move request in the target Exchange Organiza
 
 The following command completes the migration. Note that this time the *wait* parameter has been set to TRUE. This means the cmdlet will wait for the mailbox to be migrated (up to 12 hours) and will then complete the post migration tasks. Also note that the *link* parameter has been set to TRUE. This will link the mailbox back to the source domain user object. This is useful if you need to migrate mailboxes before you can actually migrate the users to a new AD forest.
 
+> PS C:\> Start-EMProcessMailbox -Samaccountname miguser1 -Mode Prepare -MoveMailbox Yes -Wait $true -Link $true  
+> 20190502120823746 MIGUSER1 MIGRATE mailbox  
+> 20190502120823758 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: P...  
+> 20190502120828358 MIGUSER1 SourceType: UserMailbox; SourcePDC: SERVER.DOMAINA.NET; TargetType: Remote...  
+> 20190502120828376 MIGUSER1 Primary: SOURCE  
+> 20190502120834395 MIGUSER1 Resuming move request. Move request state: AutoSuspended [AR]  
+> 20190502120837332 MIGUSER1 Resumed move request and set to complete. Waiting 43200 seconds to complete [OK]  
+> 20190502120910273 MIGUSER1 Waited 36 seconds. State: InProgress  
+> 20190502120943188 MIGUSER1 Waited 69 seconds. State: InProgress  
+> 20190502121016189 MIGUSER1 Waited 102 seconds. State: InProgress  
+> 20190502121049219 MIGUSER1 Waited 135 seconds. State: InProgress  
+> 20190502121122339 MIGUSER1 Waited 168 seconds. State: InProgress  
+> 20190502121155905 MIGUSER1 Waited 201 seconds. State: Completed  
+> 20190502121155944 MIGUSER1 Move mailbox request [OK]  
+> 20190502121155978 MIGUSER1 MIGRATE mailbox  
+> 20190502121155997 MIGUSER1 SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activity: MIGRATE; Mode: P...  
+> 20190502121200742 MIGUSER1 SourceType: MailUser; SourcePDC: SERVER.DOMAINA.NET; TargetType: UserMailb...  
+> 20190502121200774 MIGUSER1 Primary: TARGET  
+> 20190502121200796 MIGUSER1 Secondary targetaddress attr update required [AR]  
+> 20190502121201021 MIGUSER1 Secondary mDBOverHardQuotaLimit attr update required [AR]  
+> 20190502121201032 MIGUSER1 Secondary mDBOverQuotaLimit attr update required [AR]  
+> 20190502121201041 MIGUSER1 Secondary mDBStorageQuota attr update required [AR]  
+> 20190502121201050 MIGUSER1 Secondary mDBUseDefaults attr update required [AR]  
+> 20190502121202028 MIGUSER1 Converting secondary to remote user mailbox [AR]  
+> 20190502121204278 MIGUSER1 Secondary user prepared in domain 'DOMAINA.NET' [OK]  
+> 20190502121207651 MIGUSER1 Move request state: Completed  
+> 20190502121210840 MIGUSER1 Primary SIR attrs update required [AR]  
+> 20190502121214334 MIGUSER1 Primary SIR attrs updated [OK]  
+> 20190502121214382 MIGUSER1 Checking full access permissions on primary  
+> 20190502121217642 MIGUSER1 Checking send-as permissions on primary  
+> 20190502121224695 MIGUSER1 Converting primary to linked mailbox [AR]  
+> 20190502121228475 MIGUSER1 Primary converted to linked mailbox [OK]  
+> 20190502121228489 MIGUSER1 Ready [OK]  
 
+At this point the following is true -
 
+ - The mailbox has been migrated.
+ - The mailbox has been linked to the source domain user object.
+ - The source mailbox has been converted to a remote user mailbox.
 
+## Batch Handling Mailboxes
 
+EM includes a cmdlet for handling a large number of mailboxes.
+
+**Start-EMProcessMailboxBatch** [-Samaccountnames] <array> [[-SourceCred] <pscredential>] [[-TargetCred] <pscredential>] [[-SourceDomain] <string>] [[-TargetDomain] <string>] [[-Activity] {Migrate | GALSync}] [[-Mode] {Prepare | LogOnly}] [[-MoveMailbox] {Yes | No | Suspend}] [[-SourceEndPoint] <string>] [[-TargetEndPoint] <string>] [[-Link] <bool>] [[-Separate] <bool>] [[-Threads] <int>] [[-wait] <bool>] [[-ReportSMTP] <string>] [[-SMTPServer] <string>] [<CommonParameters>]
+ 
+This is used in a similar way to Start-EMProcessMailbox with the exception of providing an array of samaccountname strings to the *samaccountname* parameter. The cmdlet will then invoke the Start-EMProcessMailbox cmdlet is a controlled way to automate the action across many mailboxes.
 
 
 
