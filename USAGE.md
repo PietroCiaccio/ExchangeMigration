@@ -118,11 +118,26 @@ The module uses the following defaults unless overwritten by Write-EMConfigurati
  
 ## Logs Management
 
-Get-EMLogs [-Identity] <string> [[-Type] <string>] [[-Ref] <string>]  [<CommonParameters>]
+**Get-EMLogs** [-Identity] <string> [[-Type] <string>] [[-Ref] <string>]  [<CommonParameters>]
  
-Clear-EMLogs
+This cmdlet will get the logs for a samaccountname or batch.
 
-Start-EMLogsArchive
+**Start-EMLogsArchive**
+
+This cmdlet will package up all the log files into a single zip with a naming convension based on the timestamp, e.g. 201905022011915.zip
+ 
+**Clear-EMLogs**
+
+This cmdlet will delete all logs and log archives from the logs directory.
+
+Logging terminology -
+
+ - GO: Start of cmdlet execution.
+ - LOG: A log of information.
+ - AR: Action required.
+ - OK: Applied successfully or healthy state.
+ - WARN: Issue detected but error action will be to continue.
+ - ERR: Critical issue detected and an error has been thrown. Unable to continue. 
 
 ## Preparating Mailboxes
 
