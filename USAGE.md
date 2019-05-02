@@ -330,7 +330,6 @@ The following command gets more information on the job -
 
 > PS C:\> Get-EMLogs -Identity EMProcessMailboxBatch20190502145445 | ft  
 > Ref               Timestamp           Identity                            Type Comment  
-> ---               ---------           --------                            ---- -------  
 > 20190502145445753 02/05/2019 14:54:45 EMPROCESSMAILBOXBATCH20190502145445 LOG  Samaccountname: miguser1 Sou ...  
 > 20190502145447240 02/05/2019 14:54:47 EMPROCESSMAILBOXBATCH20190502145445 LOG  Samaccountname: miguser2 Sou ...  
 > 20190502145619711 02/05/2019 14:56:19 EMPROCESSMAILBOXBATCH20190502145445 LOG  Total 2 ERR 0  
@@ -339,7 +338,6 @@ The following command gets detailed information for a single mailbox -
 
 > PS C:\> Get-EMLogs -Identity miguser1 | ft  
 > Ref               Timestamp           Identity                            Type Comment  
-> ---               ---------           --------                            ---- -------  
 > 20190502145300219 02/05/2019 14:53:00 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145234' started  
 > 20190502145300311 02/05/2019 14:53:00 MIGUSER1 GO   MIGRATE mailbox  
 > 20190502145300331 02/05/2019 14:53:00 MIGUSER1 LOG  SourceDomain: DOMAINA.NET; TargetDomain: DOMAINB.NET; Activ ...  
