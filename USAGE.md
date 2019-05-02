@@ -318,7 +318,7 @@ The follow command will prepare all samaccountnames in the array.
 You will see a progress bar and on completion you will see the following overview -
 
 > PS C:\> Start-EMProcessMailboxBatch -Samaccountnames $sams -Mode Prepare  
->  
+> 
 > Job:            EMProcessMailboxBatch20190502145445  
 > Started:        05/02/2019 14:54:45  
 > Completing:     05/02/2019 14:54:49  
@@ -329,7 +329,6 @@ You will see a progress bar and on completion you will see the following overvie
 The following command gets more information on the job -
 
 > PS C:\> Get-EMLogs -Identity EMProcessMailboxBatch20190502145445 | ft  
->  
 > Ref               Timestamp           Identity                            Type Comment  
 > ---               ---------           --------                            ---- -------  
 > 20190502145445753 02/05/2019 14:54:45 EMPROCESSMAILBOXBATCH20190502145445 LOG  Samaccountname: miguser1 Sou ...  
@@ -339,7 +338,6 @@ The following command gets more information on the job -
 The following command gets detailed information for a single mailbox -
 
 > PS C:\> Get-EMLogs -Identity miguser1 | ft  
-> 
 > Ref               Timestamp           Identity                            Type Comment  
 > ---               ---------           --------                            ---- -------  
 > 20190502145300219 02/05/2019 14:53:00 MIGUSER1 LOG  'EMProcessMailboxBatch20190502145234' started  
