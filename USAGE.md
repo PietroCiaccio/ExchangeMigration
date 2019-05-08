@@ -418,3 +418,5 @@ At this point the Exchange Organizations are prepared for coexistence and migrat
  - Start with smaller numbers and then increase until the migration has been completed.
  
 Once all mailboxes have been migrated you will need to perform Exchange Organizational level post migration tasks. This is out of scope of EM.
+
+***Always make sure you test everything in a test environment first and you are happy with the results before using in production***
