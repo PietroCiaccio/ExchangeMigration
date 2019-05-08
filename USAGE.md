@@ -386,8 +386,6 @@ It should be noted that GALSync should only be used for objects you do not wish 
  - The secondary object will be hidden from the GAL.
  - The object will have a mailtip populated advising the sender that the recipients are external.
  - Cross forest settings and permissions will be removed (if they exist).
- - Membership will be removed.
- - Permissions to send to the distribution group will be removed.
  
  ## Separation
  
