@@ -116,3 +116,4 @@ This is where EM will create an object in the target ExchOrg but it is only crea
 
  - EM will disable the automatic application of email address policies to a mailbox or distribution group. This is to ensure SMTP addresses are controlled during the coexistence and migration process. Automatic updates of email addresses based on email address policies will need to be enabled post migration.
  - EM has been tested with and without SID history enabled. When SID history is enabled then the information you see in the GUI or EMS (Exchange Management Shell) may only show local permissions which may be confusing. If you explore the actual SIDs you will see they are correct. The GUI and EMS resolve the local security description because the foreign SID has been added as a SID history value to the local AD object.
+ - Bookable resources will be configured to process external requests.
