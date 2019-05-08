@@ -5,7 +5,6 @@ If you explore the cmdlets available with the EM Powershell Module you will see 
 **Setting Up**
 
 - Write-EMConfiguration
-- Read-EMConfiguration
 - Get-EMConfiguration
 - Test-EMConfiguration
 
@@ -69,22 +68,15 @@ After you have created the configuration file you will see the following when im
 > To create a new configuration use the 'Write-EMConfiguration' cmdlet.  
 > To test configuration data settings use 'Test-EMConfiguraion'  
 
-
 **Write-EMConfiguration** [-SourceDomain] <string> [-SourceEndPoint] <string> [-SourceGALSyncOU] <string> [-TargetDomain] <string> [-TargetEndPoint] <string> [-TargetGALSyncOU] <string> [[-LogPath] <string>]
  
 This cmdlet is used to create the configuration file. This will overwrite any configuration file that exists. The configuration file is created in the following location.
 
 C:\Users\samaccountname\AppData\Local\EM\ExchangeMigration.config
 
-**Read-EMConfiguration**
-
-This cmdlet is used to read the configuration file.
-
-
 **Get-EMConfiguration**
 
 This cmdlet is used to display the configuration that has been loaded for the module to use. This is slightly different to Read-EMConfiguration.
-
 
 **Test-EMConfiguration**
 
