@@ -111,3 +111,8 @@ This is where EM will migrate mail data and settings from the source to the targ
 **GALSync**
 
 This is where EM will create an object in the target ExchOrg but it is only created to support coexistence between the two Exchange Organizations. The settings migrated will be limited and only used for GAL synchronization purposes. Objects configured this way are not intended to be fully migrated.
+
+### Important Notes
+
+ - EM will disable the automatic application of email address policies to a mailbox or distribution group. This is to ensure SMTP addresses are controlled during the coexistence and migration process. Automatic updates of email addresses based on email address policies will need to be enabled post migration.
+ - EM has been tested with and without SID history enabled. When SID history is enabled then the information you see in the GUI or EMS (Exchange Management Shell) may only show local permissions which may be confusing. If you explore the actual SIDs you will see they are correct. The GUI and EMS resolve the local security description because the foreign SID has been added as a SID history value to the local AD object.
