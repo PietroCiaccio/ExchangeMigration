@@ -19,6 +19,7 @@ If you explore the cmdlets available with the EM Powershell Module you will see 
 
 - Start-EMProcessMailbox
 - Start-EMProcessDistributionGroup
+- Start-EMCleanActiveDirectoryObject
 
 **Processing Batches**
 
@@ -33,9 +34,7 @@ Run the following -
 
 On the first run you will be presented with the following -
 
-> EM (ExchangeMigration) Powershell Module  
-> https://github.com/PietroCiaccio/ExchangeMigration  
-> 25/04/2019 16:49:33  
+> Exchange Migration Powershell Module / *n.n.n*
 >  
 > Configuration not detected. Calling 'Write-EMConfiguration' [WARN]  
 >  
@@ -61,9 +60,7 @@ It is required to create a configuration file so you have a baseline for your ta
 
 After you have created the configuration file you will see the following when importing the EM powershell module.
 
-> EM (ExchangeMigration) Powershell Module  
-> https://github.com/PietroCiaccio/ExchangeMigration  
-> 25/04/2019 17:22:19  
+> Exchange Migration Powershell Module / *n.n.n*  
 >   
 > Configuration detected. [OK]  
 > Configuration successfully enabled. [OK]  
@@ -141,6 +138,18 @@ Logging terminology -
 ## Preparing Mailboxes
 
 Please note, all user objects should have been created in the target domain before mailbox preparation is implemented.
+
+To remove all Exchange attributes from a user or group AD object use the following cmdlet -
+
+**Start-EMCleanActiveDirectoryObject** [-Samaccountname] <String> [-SourceOrTarget] <String> [[-SourceDomain] <String>] [[-SourceCred] <PSCredential>] [[-TargetDomain] <String>] [[-TargetCred] <PSCredential>] [[-Confirm] <Boolean>] [<CommonParameters>]
+ 
+Example use -
+
+> PS C:\> Start-EMCleanActiveDirectoryObject -Samaccountname miguser1 -SourceOrTarget Source  
+> 20190508084333857 MIGUSER1 Cleaning AD object in domain 'DOMAIN1.NET'  
+> This will remove all Exchange attributes! Are you sure? [Y] Yes [N] No (default is "Y") :  
+> 20190508084338467 MIGUSER1 Cleaned object [OK]  
+> 20190508084338486 MIGUSER1 Ready  
 
 To prepare a single mailbox you would use the following cmdlet -
 
