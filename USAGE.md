@@ -101,7 +101,7 @@ The module uses the following defaults unless overwritten by Write-EMConfigurati
  - Link = $false  
  - Separate = $false  
  - LogPath = "C:\Temp\EM"  
- - Threads = 10  
+ - Threads = 8 
  - Wait = $false  
  
 ## Logs Management
