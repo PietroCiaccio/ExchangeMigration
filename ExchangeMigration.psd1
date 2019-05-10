@@ -1,7 +1,7 @@
 @{
 RootModule = 'ExchangeMigration.psm1'
 Description ='The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Exchange cross-forest migration.'
-ModuleVersion = '0.4.0'
+ModuleVersion = '0.4.1'
 Author = 'Pietro Ciaccio'
 FunctionsToExport = @( 
 'Clear-EMData'
@@ -23,10 +23,17 @@ PrivateData = @{
         		ProjectUri = 'https://GitHub.com/PietroCiaccio/ExchangeMigration'
 		Tags = @('Exchange','Migration','ExchangeMigration','PSEdition_Desktop','Windows','Powershell')
 		ReleaseNotes = @'
-GitHub is used for development and documentation. Please refer to the GitHub project URI for guidance.
+EM was written to support a Microsoft Exchange Server 2010 to Microsoft Exchange Server 2016 cross-forest migration. Other scenarios may be supported, however at this stage untested.
+
+GitHub is used for development, documentation, and reporting issues. Please refer to the GitHub project URI for guidance.
 https://GitHub.com/PietroCiaccio/ExchangeMigration
 
 Please use the latest version available on PowerShell Gallery.
+
+## 0.4.1
+
+* Alpha
+* Small changes to psd1.
 
 ## 0.4.0
 
