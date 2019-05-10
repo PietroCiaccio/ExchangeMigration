@@ -10,8 +10,8 @@ If you explore the cmdlets available with the EM Powershell Module you will see 
 
 **Logs Management**
 
-- Get-EMLogs
-- Clear-EMLogs
+- Read-EMLogs
+- Clear-EMData
 - Start-EMLogsArchive
 
 **Processing Individual Objects**
