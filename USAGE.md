@@ -106,7 +106,7 @@ The module uses the following defaults unless overwritten by Write-EMConfigurati
  
 ## Logs Management
 
-**Get-EMLogs** [-Identity] <string> [[-Type] <string>] [[-Ref] <string>]  [<CommonParameters>]
+**Read-EMLogs** [-Identity] <string> [[-Type] <string>] [[-Ref] <string>]  [<CommonParameters>]
  
 This cmdlet will get the logs for a samaccountname or batch.
 
@@ -114,9 +114,9 @@ This cmdlet will get the logs for a samaccountname or batch.
 
 This cmdlet will package up all the log files into a single zip with a naming convension based on the timestamp, e.g. 201905022011915.zip
  
-**Clear-EMLogs**
+**Clear-EMData**
 
-This cmdlet will delete all logs and log archives from the logs directory.
+This cmdlet will delete all logs, log archives, and data from the logs directory.
 
 Logging terminology -
 
