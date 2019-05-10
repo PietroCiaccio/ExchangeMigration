@@ -1,12 +1,12 @@
 @{
 RootModule = 'ExchangeMigration.psm1'
 Description ='The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Exchange cross-forest migration.'
-ModuleVersion = '0.3.1'
+ModuleVersion = '0.4.0'
 Author = 'Pietro Ciaccio'
 FunctionsToExport = @( 
-'Clear-EMLogs'
+'Clear-EMData'
 'Get-EMConfiguration'
-'Get-EMLogs'
+'Read-EMLogs'
 'Start-EMCleanActiveDirectoryObject'
 'Start-EMLogsArchive'
 'Start-EMProcessDistributionGroup'
@@ -28,11 +28,20 @@ https://GitHub.com/PietroCiaccio/ExchangeMigration
 
 Please use the latest version available on PowerShell Gallery.
 
+## 0.4.0
+
+* Alpha.
+* GALSync now less restrictive for mailboxes and distribution groups.
+* Bug fix with calculating targetaddress attribute on mailbox separation.
+* Improvements to room and equipment mailbox migrations.
+* Added post mailbox migration settings feature. Supports settings not stored in AD and are not migrated by the new-moverequest cmdlet. 
+* Added single item recovery settings migration process.
+* Changes to logging.
+
 ## 0.3.1
 
 * Alpha.
-* Small changes to console logging.
-* GALSync for distribution groups are now less restrictive.
+* Bug fix.
 
 ## 0.3.0
 
