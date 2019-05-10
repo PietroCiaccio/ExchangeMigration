@@ -30,6 +30,10 @@ If you explore the cmdlets available with the EM Powershell Module you will see 
 Run the following -
 
  - import-module .\ExchangeMigration.psm1
+ 
+Or to install from PowerShell gallery -
+
+ - Install-Module -Name ExchangeMigration
 
 On the first run you will be presented with the following -
 
