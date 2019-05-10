@@ -82,8 +82,8 @@ Please understand the concept of the STPS (Source Target Primary Secondary) Mode
 
 **For mailbox enabled objects**
 
-- Source - This refers to where mail enabled enabled objects will be migrated from.
-- Target - This refers to where mail enabled enabled objects will be migrated to.
+- Source - This refers to where mail enabled objects will be migrated from.
+- Target - This refers to where mail enabled objects will be migrated to.
 - Primary - This is the mailbox enabled object.
 - Secondary - This is the mail enabled object in the opposite ExchOrg that is prepared / sychronized with the mailbox.
 
