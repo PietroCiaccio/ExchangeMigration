@@ -4,7 +4,7 @@ The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Excha
 
 *Although complete, EM is still in testing and is therefore being marked as an alpha release.*
 
-EM was written to support a Microst Exchange Server 2010 to Microsoft Exchange Server 2016 cross-forest migration. Other scenarios may be supported, however at this stage untested.
+EM was written to support a Microsoft Exchange Server 2010 to Microsoft Exchange Server 2016 cross-forest migration. Other scenarios may be supported, however at this stage untested.
 
 **Developed using the following**
 
