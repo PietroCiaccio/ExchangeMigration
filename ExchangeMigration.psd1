@@ -1,7 +1,7 @@
 @{
 RootModule = 'ExchangeMigration.psm1'
 Description ='The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Exchange cross-forest migration.'
-ModuleVersion = '0.4.1'
+ModuleVersion = '0.5.0'
 Author = 'Pietro Ciaccio'
 FunctionsToExport = @( 
 'Clear-EMData'
@@ -29,6 +29,11 @@ GitHub is used for development, documentation, and reporting issues. Please refe
 https://GitHub.com/PietroCiaccio/ExchangeMigration
 
 Please use the latest version available on PowerShell Gallery.
+
+## 0.5.0
+
+* Alpha
+* Improved configuration management.
 
 ## 0.4.1
 
