@@ -1,7 +1,7 @@
 @{
 RootModule = 'ExchangeMigration.psm1'
 Description ='The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Exchange cross-forest migration.'
-ModuleVersion = '0.5.0'
+ModuleVersion = '0.5.1'
 Author = 'Pietro Ciaccio'
 FunctionsToExport = @( 
 'Clear-EMData'
@@ -30,19 +30,21 @@ https://GitHub.com/PietroCiaccio/ExchangeMigration
 
 Please use the latest version available on PowerShell Gallery.
 
-## 0.5.0
+## 0.5.1-alpha
 
-* Alpha
+* Bug fix with move request and large items.
+* Increased move request bad item limit.
+
+## 0.5.0-alpha
+
 * Improved configuration management.
 
-## 0.4.1
+## 0.4.1-alpha
 
-* Alpha
 * Small changes to psd1.
 
-## 0.4.0
+## 0.4.0-alpha
 
-* Alpha.
 * GALSync now less restrictive for mailboxes and distribution groups.
 * Bug fix with calculating targetaddress attribute on mailbox separation.
 * Improvements to room and equipment mailbox migrations.
@@ -50,20 +52,17 @@ Please use the latest version available on PowerShell Gallery.
 * Added single item recovery settings migration process.
 * Changes to logging.
 
-## 0.3.1
+## 0.3.1-alpha
 
-* Alpha.
 * Bug fix.
 
-## 0.3.0
+## 0.3.0-alpha
 
-* Alpha.
 * Added feature to clean Active Directory object Exchange attributes.
 * Added help data to cmdlets.
 
-## 0.2
+## 0.2-alpha
 
-* Alpha.
 * Initial release from GitHub.
 
 '@
