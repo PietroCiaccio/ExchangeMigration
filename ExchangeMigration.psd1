@@ -1,14 +1,16 @@
 @{
 RootModule = 'ExchangeMigration.psm1'
 Description ='The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Exchange cross-forest migration.'
-ModuleVersion = '0.5.2'
-Author = 'Pietro Ciaccio'
+ModuleVersion = '0.7.2'
+Author = 'Pietro Ciaccio | LinkedIn: https://www.linkedin.com/in/pietrociaccio | Twitter: @PietroCiac'
 FunctionsToExport = @( 
 'Clear-EMData'
 'Get-EMConfiguration'
 'Read-EMLogs'
 'Start-EMCleanActiveDirectoryObject'
 'Start-EMLogsArchive'
+'Start-EMProcessContact'
+'Start-EMProcessContactBatch'
 'Start-EMProcessDistributionGroup'
 'Start-EMProcessDistributionGroupBatch'
 'Start-EMProcessMailbox'
@@ -29,6 +31,32 @@ GitHub is used for development, documentation, and reporting issues. Please refe
 https://GitHub.com/PietroCiaccio/ExchangeMigration
 
 Please use the latest version available on PowerShell Gallery.
+
+##0.7.2-alpha
+
+* Bug fixes.
+* Added support for Quest Migration Manager's use of extensionattribute14 and 15.
+
+##0.7.1-alpha
+
+* Optimization changes.
+
+##0.7.0-alpha
+
+* Added contacts migration support.
+* Small changes to support alias/mailnickname lookups.
+
+## 0.6.2-alpha
+
+* Small changes to psd1.
+
+## 0.6.1-alpha
+
+* Small correction in console logging.
+
+## 0.6.0-alpha
+
+* Logging improvements.
 
 ## 0.5.2-alpha
 
