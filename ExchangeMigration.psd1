@@ -1,12 +1,14 @@
 @{
 RootModule = 'ExchangeMigration.psm1'
 Description ='The EM (ExchangeMigration) Powershell module is used to assist a Microsoft Exchange cross-forest migration.'
-ModuleVersion = '0.7.2'
+ModuleVersion = '0.9.8'
 Author = 'Pietro Ciaccio | LinkedIn: https://www.linkedin.com/in/pietrociaccio | Twitter: @PietroCiac'
 FunctionsToExport = @( 
 'Clear-EMData'
 'Get-EMConfiguration'
+'Read-EMBackUp'
 'Read-EMLogs'
+'Set-EMSourceUniqueMailnickname'
 'Start-EMCleanActiveDirectoryObject'
 'Start-EMLogsArchive'
 'Start-EMProcessContact'
@@ -31,6 +33,116 @@ GitHub is used for development, documentation, and reporting issues. Please refe
 https://GitHub.com/PietroCiaccio/ExchangeMigration
 
 Please use the latest version available on PowerShell Gallery.
+
+##0.9.8-alpha
+
+* Bug fix with grouptype.
+
+##0.9.7-alpha
+
+* Changes to batch logging.
+
+##0.9.6-alpha
+
+* Improved support for room and equipment mailboxes.
+
+##0.9.5-alpha
+
+* Bug fix.
+
+##0.9.4-alpha
+
+* Bug fix.
+
+##0.9.3-alpha
+
+* Bug fix.
+
+##0.9.2-alpha
+
+* Bug fix.
+
+##0.9.1-alpha
+
+* Bug fix.
+
+##0.9.0-alpha
+
+* Bug fixes.
+* Added cmdlet to create unique mailnickname attributes in the source Active Directory.
+
+##0.8.16-alpha
+
+* Bug fix.
+
+##0.8.15-alpha
+
+* Bug fixes.
+
+##0.8.14-alpha
+
+* Bug fixes.
+
+##0.8.13-alpha
+
+* Bug fixes.
+* Improvements to backup.
+
+##0.8.12-alpha
+
+* Batch handling changes.
+
+##0.8.11-alpha
+
+* Bug fix.
+
+##0.8.10-alpha
+
+* Batch handling changes.
+
+##0.8.9-alpha
+
+* Bug fix.
+
+##0.8.8-alpha
+
+* Bug fix.
+
+##0.8.7-alpha
+
+* Bug fix.
+
+##0.8.6-alpha
+
+* Bug fix.
+
+##0.8.5-alpha
+
+* Bug fix.
+
+##0.8.4-alpha
+
+* Bug fix.
+
+##0.8.3-alpha
+
+* Bug fix.
+
+##0.8.2-alpha
+
+* Bug fix.
+
+##0.8.1-alpha
+
+* Bug fix.
+
+##0.8.0-alpha
+
+* Added backup feature.
+
+##0.7.3-alpha
+
+* Bug fixes.
 
 ##0.7.2-alpha
 
